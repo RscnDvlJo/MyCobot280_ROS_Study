@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="model" default="$(find mycobot_description)/urdf/mycobot_280_pi/mycobot_280_pi.urdf" />
+  <arg name="rvizconfig" default="$(find mycobot_description)/rviz/display.rviz" />
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+  
+<!--  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" /> -->
+
+
+  <node pkg="manual_srvs" type="set_joint_angles_server" name="set_joint_angles_server" output="screen" />
+
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>

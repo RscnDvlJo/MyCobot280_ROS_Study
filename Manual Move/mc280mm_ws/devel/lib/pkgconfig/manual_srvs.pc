@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/mc280mm_ws/devel
+
+Name: manual_srvs
+Description: Description of manual_srvs
+Version: 0.0.0
+Cflags: -I/home/jhs/Desktop/mc280mm_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs sensor_msgs message_runtime

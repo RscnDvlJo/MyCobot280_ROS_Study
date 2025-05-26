@@ -1,0 +1,10 @@
+(cl:defpackage manual_srvs-srv
+  (:use )
+  (:export
+   "SETJOINTANGLES"
+   "<SETJOINTANGLES-REQUEST>"
+   "SETJOINTANGLES-REQUEST"
+   "<SETJOINTANGLES-RESPONSE>"
+   "SETJOINTANGLES-RESPONSE"
+  ))
+

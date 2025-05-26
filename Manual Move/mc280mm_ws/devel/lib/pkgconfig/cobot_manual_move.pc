@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/mc280mm_ws/devel
+
+Name: cobot_manual_move
+Description: Description of cobot_manual_move
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

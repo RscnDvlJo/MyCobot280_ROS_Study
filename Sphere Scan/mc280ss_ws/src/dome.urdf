@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="mycobot_with_dome">
+  <link name="dome">
+    <visual>
+      <geometry>
+        <mesh filename="package://mycobot_description/meshes/dome_half_sphere.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="light_blue">
+        <color rgba="0.3 0.6 1.0 0.4"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mycobot_description/meshes/dome_half_sphere.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="dome_joint" type="fixed">
+    <parent link="g_base"/>
+    <child link="dome"/>
+    <origin xyz="0 0 0.01" rpy="0 0 0"/>
+  </joint>
+</robot>

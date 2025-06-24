@@ -1,0 +1,2 @@
+cobot_manual_move:manual_srvs:mycobot_description
+-DCATKIN_DEVEL_PREFIX=/home/jhs/Desktop/Git/Manual_Move/mc280mm_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jhs/Desktop/Git/Manual_Move/mc280mm_ws/install -G Unix Makefiles

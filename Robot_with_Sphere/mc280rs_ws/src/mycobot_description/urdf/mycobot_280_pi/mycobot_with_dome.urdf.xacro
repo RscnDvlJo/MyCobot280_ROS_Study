@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mycobot_with_dome">
+
+  <!-- MyCobot 전체 구조 포함 -->
+  <xacro:include filename="$(find mycobot_description)/urdf/mycobot_280_pi/mycobot_280_pi.urdf.xacro" />
+
+  <!-- dome 링크 추가 -->
+  <link name="dome">
+    <visual>
+      <geometry>
+        <mesh filename="package://sphere_description/meshes/dome_half_sphere.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="light_blue">
+        <color rgba="0.3 0.6 1.0 0.4"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://sphere_description/meshes/dome_half_sphere.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="dome_joint" type="fixed">
+    <parent link="g_base"/>
+    <child link="dome"/>
+    <origin xyz="0 0 0.01" rpy="0 0 0"/>
+  </joint>
+
+</robot>
+

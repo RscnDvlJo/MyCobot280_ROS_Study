@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/install
+
+Name: cobot_sphere_scan
+Description: Description of cobot_sphere_scan
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs sensor_msgs message_runtime

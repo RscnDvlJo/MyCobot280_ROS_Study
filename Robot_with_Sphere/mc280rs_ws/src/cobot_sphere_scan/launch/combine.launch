@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find cobot_sphere_scan)/launch/mycobot_280.launch"/>
+  <include file="$(find cobot_sphere_scan)/launch/sphere.launch"/>
+  
+  <arg name="rvizconfig" default="$(find cobot_sphere_scan)/rviz/robot_with_sphere.rviz" />
+  
+   <node name="cobot_joint_setting" pkg="cobot_sphere_scan" type="cobot_joint_setting" output="screen" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+
+</launch>
+

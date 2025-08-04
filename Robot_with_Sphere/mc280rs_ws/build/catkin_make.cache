@@ -1,2 +1,2 @@
 cobot_sphere_scan:mycobot_description:sphere_description
--DCATKIN_DEVEL_PREFIX=/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/install -G Unix Makefiles

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src
+CMAKE_SOURCE_DIR = /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build
+CMAKE_BINARY_DIR = /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ mycobot_description/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_
 .PHONY : mycobot_description/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 mycobot_description/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build/mycobot_description && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build/mycobot_description && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : mycobot_description/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 mycobot_description/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src/mycobot_description /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build/mycobot_description /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build/mycobot_description/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src/mycobot_description /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build/mycobot_description /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build/mycobot_description/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : mycobot_description/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

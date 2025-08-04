@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <group ns="object">
+	  <arg name="object" default="$(find modular_code)/urdf/objects/object.urdf" />
+
+	  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg object)" />
+	  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+  
+  </group>
+
+</launch>

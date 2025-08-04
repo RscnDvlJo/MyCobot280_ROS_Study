@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/MyCobot280_ROS_Study/Modular_Code/modular_ws/install
+
+Name: modular_code
+Description: Description of modular_code
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lmodular_code_lib
+Requires: roscpp std_msgs sensor_msgs message_runtime tf

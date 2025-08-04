@@ -67,14 +67,14 @@ set(cobot_sphere_scan_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(cobot_sphere_scan_SOURCE_PREFIX /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan)
-  set(cobot_sphere_scan_DEVEL_PREFIX /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/devel)
+  set(cobot_sphere_scan_SOURCE_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan)
+  set(cobot_sphere_scan_DEVEL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/devel)
   set(cobot_sphere_scan_INSTALL_PREFIX "")
   set(cobot_sphere_scan_PREFIX ${cobot_sphere_scan_DEVEL_PREFIX})
 else()
   set(cobot_sphere_scan_SOURCE_PREFIX "")
   set(cobot_sphere_scan_DEVEL_PREFIX "")
-  set(cobot_sphere_scan_INSTALL_PREFIX /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/install)
+  set(cobot_sphere_scan_INSTALL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/install)
   set(cobot_sphere_scan_PREFIX ${cobot_sphere_scan_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

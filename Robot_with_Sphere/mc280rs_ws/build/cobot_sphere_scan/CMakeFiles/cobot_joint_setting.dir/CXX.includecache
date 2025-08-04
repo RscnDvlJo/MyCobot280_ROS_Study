@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan/src/cobot_joint_setting.cpp
+/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan/src/cobot_joint_setting.cpp
 ros/ros.h
-/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan/src/ros/ros.h
+/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan/src/ros/ros.h
 sensor_msgs/JointState.h
-/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan/src/sensor_msgs/JointState.h
+/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan/src/sensor_msgs/JointState.h
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h

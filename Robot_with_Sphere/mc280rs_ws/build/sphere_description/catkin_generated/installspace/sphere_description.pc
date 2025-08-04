@@ -1,4 +1,4 @@
-prefix=/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/install
+prefix=/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/install
 
 Name: sphere_description
 Description: Description of sphere_description

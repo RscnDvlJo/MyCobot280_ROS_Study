@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="sphere">
+  <link name="g_base"/>
+
+  <link name="dome">
+    <visual>
+      <geometry>
+        <mesh filename="package://modular_code/meshes/objects/object.stl" scale="1 1 1"/>
+      </geometry>
+
+    </visual>
+  </link>
+  
+  <joint name="dome_fixed_joint" type="fixed">
+    <axis xyz="0 0 0"/>
+    <parent link="g_base"/>
+    <child link="dome"/>
+    <origin xyz="0.25 0 0.1" rpy="0 0 0"/>
+  </joint>
+
+
+</robot>
+

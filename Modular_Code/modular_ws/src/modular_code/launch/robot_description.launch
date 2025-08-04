@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+
+  <group ns="robot">
+  
+	  <arg name="robot" default="$(find modular_code)/urdf/robots/mycobot_280.urdf" />
+
+	  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg robot)" />
+	  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+
+  </group>
+   
+</launch>

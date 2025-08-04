@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find modular_code)/launch/robot_description.launch"/>
+  <include file="$(find modular_code)/launch/object_description.launch"/>
+  
+  
+  <!-- after get rviz.config-->
+  
+  <arg name="rvizconfig" default="$(find modular_code)/rviz/config.rviz" />
+
+  
+  
+  <!--main program what we want to process-->
+  
+   <node name="processing" pkg="modular_code" type="processing" output="screen" />
+   
+   
+  <!-- after get rviz.config-->
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+ 
+
+  <!-- before get rviz.config-->
+  <!--
+  <node name="rviz" pkg="rviz" type="rviz" />
+  -->
+  
+</launch>
+

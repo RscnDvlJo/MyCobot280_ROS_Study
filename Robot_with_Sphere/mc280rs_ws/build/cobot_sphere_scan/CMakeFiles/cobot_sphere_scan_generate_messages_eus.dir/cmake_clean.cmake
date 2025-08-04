@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/devel/share/roseus/ros/cobot_sphere_scan/manifest.l"
+  "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/devel/share/roseus/ros/cobot_sphere_scan/manifest.l"
   "CMakeFiles/cobot_sphere_scan_generate_messages_eus"
 )
 

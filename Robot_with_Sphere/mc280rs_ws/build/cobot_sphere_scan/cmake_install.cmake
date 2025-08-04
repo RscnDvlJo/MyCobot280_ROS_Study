@@ -1,8 +1,8 @@
-# Install script for directory: /home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan
+# Install script for directory: /home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,37 +38,37 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cobot_sphere_scan/cmake" TYPE FILE FILES "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scan-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cobot_sphere_scan/cmake" TYPE FILE FILES "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scan-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/devel/share/roseus/ros/cobot_sphere_scan")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/devel/share/roseus/ros/cobot_sphere_scan")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/devel/lib/python3/dist-packages/cobot_sphere_scan")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/devel/lib/python3/dist-packages/cobot_sphere_scan")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/devel/lib/python3/dist-packages/cobot_sphere_scan")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/devel/lib/python3/dist-packages/cobot_sphere_scan")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scan.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scan.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cobot_sphere_scan/cmake" TYPE FILE FILES "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scan-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cobot_sphere_scan/cmake" TYPE FILE FILES "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scan-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cobot_sphere_scan/cmake" TYPE FILE FILES
-    "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scanConfig.cmake"
-    "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scanConfig-version.cmake"
+    "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scanConfig.cmake"
+    "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/build/cobot_sphere_scan/catkin_generated/installspace/cobot_sphere_scanConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cobot_sphere_scan" TYPE FILE FILES "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cobot_sphere_scan" TYPE FILE FILES "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/src/cobot_sphere_scan/package.xml")
 endif()
 

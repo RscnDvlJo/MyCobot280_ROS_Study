@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/devel/lib/cobot_sphere_scan/cobot_joint_setting"
-  "/home/jhs/Desktop/Git/Robot_with_Sphere/mc280rs_ws/devel/lib/cobot_sphere_scan/cobot_joint_setting.pdb"
+  "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/devel/lib/cobot_sphere_scan/cobot_joint_setting"
+  "/home/jhs/Desktop/MyCobot280_ROS_Study/Robot_with_Sphere/mc280rs_ws/devel/lib/cobot_sphere_scan/cobot_joint_setting.pdb"
   "CMakeFiles/cobot_joint_setting.dir/src/cobot_joint_setting.cpp.o"
 )
 

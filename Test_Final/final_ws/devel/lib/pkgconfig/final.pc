@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/MyCobot280_ROS_Study/Test_Final/final_ws/devel
+
+Name: final
+Description: Description of final
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp geometry_msgs moveit_core moveit_ros_planning_interface moveit_visual_tools moveit_msgs

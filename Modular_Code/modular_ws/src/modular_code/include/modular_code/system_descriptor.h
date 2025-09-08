@@ -6,8 +6,8 @@
  */
 
 
-#ifndef SYSTEMDESCRIPTOR_H_
-#define SYSTEMDESCRIPTOR_H_
+#ifndef SYSTEM_DESCRIPTOR_H_
+#define SYSTEM_DESCRIPTOR_H_
 
 #include "ros/ros.h"
 #include "sensor_msgs/JointState.h"

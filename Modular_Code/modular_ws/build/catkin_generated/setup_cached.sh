@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/opt/ros/noetic/lib'
-export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig'
 export PWD='/home/jhs/Desktop/MyCobot280_ROS_Study/Modular_Code/modular_ws/build'
-export PYTHONPATH='/opt/ros/noetic/lib/python3/dist-packages'

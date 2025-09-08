@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/MyCobot280_ROS_Study/Test_Final/final_ws/install
+
+Name: controller_moveit
+Description: Description of controller_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

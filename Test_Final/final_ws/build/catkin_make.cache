@@ -1,0 +1,2 @@
+controller_moveit:final:final_moveit_config
+-DCATKIN_DEVEL_PREFIX=/home/jhs/Desktop/MyCobot280_ROS_Study/Test_Final/final_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jhs/Desktop/MyCobot280_ROS_Study/Test_Final/final_ws/install -G Unix Makefiles

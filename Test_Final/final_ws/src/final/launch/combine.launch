@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<launch>
+<!--
+  <include file="$(find final)/launch/robot_description.launch"/>
+  
+  <include file="$(find controller_moveit)/launch/demo.launch"/>
+  -->
+  <include file="$(find final)/launch/robot_description.launch"/>
+
+  
+  <!--
+  <include file="$(find controller_moveit)/launch/moveit_rviz.launch"/>
+  -->
+  
+  <!-- after get rviz.config-->
+  
+  
+  <param name="robot_description_semantic"
+         textfile="$(find controller_moveit)/config/firefighter.srdf" />
+
+  <!-- Kinematics / OMPL / Fake controllers -->
+  <rosparam command="load" file="$(find controller_moveit)/config/kinematics.yaml" />
+  <rosparam command="load" file="$(find controller_moveit)/config/ompl_planning.yaml" />
+  <rosparam command="load" file="$(find controller_moveit)/config/fake_controllers.yaml" />
+  <param name="moveit_controller_manager" value="moveit_fake_controller_manager/MoveItFakeControllerManager"/>
+
+
+<include file="$(find controller_moveit)/launch/move_group.launch">
+  <arg name="allow_trajectory_execution" value="true"/>
+  <arg name="moveit_controller_manager" value="fake"/>
+  
+
+  
+</include>
+
+
+<param name="allow_trajectory_execution" value="true"/>
+<param name="planning_scene_monitor/publish_planning_scene" value="true"/>
+<param name="planning_scene_monitor/publish_geometry_updates" value="true"/>
+<param name="planning_scene_monitor/publish_state_updates" value="true"/>
+<param name="planning_scene_monitor/publish_transforms_updates" value="true"/>
+
+
+  <arg name="rvizconfig" default="$(find final)/rviz/config.rviz" />
+
+  
+ 
+  <!--main program what we want to process-->
+  
+  <node pkg="final" type="joint_state_broadcaster" name="joint_state_broadcaster" output="screen"/>
+
+
+  <node name="final" pkg="final" type="final" output="screen"/>
+
+
+   <!--
+  	<rosparam command="load" file="$(find inter)/moveit_config/config/kinematics.yaml" subst_value="true"/>
+  	<param name="planning_plugin" value="ompl_interface/OMPLPlanner"/>
+  	<rosparam command="load" file="$(find inter)/moveit_config/config/ompl_planning.yaml"/>
+   -->
+  <!-- after get rviz.config-->
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+
+  <!-- before get rviz.config-->
+  <!--
+  <node name="rviz" pkg="rviz" type="rviz" />
+  -->
+  
+</launch>

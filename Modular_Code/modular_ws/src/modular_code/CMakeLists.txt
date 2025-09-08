@@ -13,10 +13,13 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   tf
+  moveit_core
+  moveit_ros_planning
+  moveit_ros_planning_interface
 )
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package( Eigen3 REQUIRED NO_MODULE)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -126,6 +129,7 @@ catkin_package(
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIRS}
 )
 
 add_executable(processing src/processing.cpp)
@@ -135,6 +139,7 @@ add_executable(processing src/processing.cpp)
 ## Declare a C++ library
  add_library(modular_code_lib
    src/system_descriptor.cpp
+   src/sphere_path_planning.cpp
  )
  
  

@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/MyCobot280_ROS_Study/Test_Final/final_ws/devel
+
+Name: final_moveit_config
+Description: Description of final_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

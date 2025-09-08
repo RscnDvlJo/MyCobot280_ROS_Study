@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<param name="robot/robot_description_semantic" textfile="$(find modular_code)/moveit_config/config/firefighter.srdf"/>
+<rosparam param="robot/robot_description_kinematics" file="$(find modular_code)/moveit_config/config/kinematics.yaml"/>
+</launch>

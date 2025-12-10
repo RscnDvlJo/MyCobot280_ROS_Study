@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<launch>
+<!--
+  <include file="$(find final)/launch/robot_description.launch"/>
+  
+  <include file="$(find controller_moveit)/launch/demo.launch"/>
+  -->
+  <include file="$(find ssc)/launch/robot_description.launch"/>
+  <include file="$(find ssc)/launch/object_description.launch"/>
+
+
+  <!--
+  <include file="$(find controller_moveit)/launch/moveit_rviz.launch"/>
+  -->
+  
+<arg name="port" default="/dev/ttyACM0" />
+<arg name="baud" default="115200" />
+ 
+  <param name="robot_description_semantic"
+         textfile="$(find srdf)/config/firefighter.srdf" />
+
+
+<rosparam command="load" file="$(find srdf)/config/kinematics.yaml" />
+<rosparam command="load" file="$(find srdf)/config/ompl_planning.yaml" />
+
+<rosparam command="load" file="$(find srdf)/config/fake_controllers.yaml" />
+<param name="moveit_controller_manager" value="moveit_fake_controller_manager/MoveItFakeControllerManager"/>
+
+
+<include file="$(find srdf)/launch/move_group.launch">
+  <arg name="allow_trajectory_execution" value="true"/>
+  <arg name="moveit_controller_manager" value="fake"/>
+</include>
+
+
+<param name="allow_trajectory_execution" value="true"/>
+<param name="planning_scene_monitor/publish_planning_scene" value="true"/>
+<param name="planning_scene_monitor/publish_geometry_updates" value="true"/>
+<param name="planning_scene_monitor/publish_state_updates" value="true"/>
+<param name="planning_scene_monitor/publish_transforms_updates" value="true"/>
+
+    <include file="$(find mycobot_communication)/launch/communication_service.launch">
+		<arg name="port" value="$(arg port)" />	
+		<arg name="baud" value="$(arg baud)" />	
+    </include>
+
+  
+ 
+  <!--main program what we want to process-->
+  
+
+
+
+  <node name="scan_control" pkg="ssc" type="scan_control" output="screen"/>
+
+
+   
+ 
+   
+  <!-- after get rviz.config-->
+  
+
+  <arg name="rvizconfig" default="$(find ssc)/rviz/config.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+
+  <!-- before get rviz.config-->
+  <!--
+  <node name="rviz" pkg="rviz" type="rviz" />
+  -->
+  
+</launch>

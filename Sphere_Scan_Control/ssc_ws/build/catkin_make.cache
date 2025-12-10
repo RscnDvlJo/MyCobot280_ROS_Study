@@ -1,0 +1,2 @@
+srdf:ssc
+-DCATKIN_DEVEL_PREFIX=/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install -G Unix Makefiles

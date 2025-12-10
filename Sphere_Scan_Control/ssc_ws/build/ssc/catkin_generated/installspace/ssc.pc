@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install
+
+Name: ssc
+Description: Description of ssc
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lssc_lib
+Requires: roscpp geometry_msgs moveit_core moveit_ros_planning_interface moveit_visual_tools moveit_msgs

@@ -159,23 +159,22 @@ int main(int argc, char** argv)
 
   bool success = (move_group_interface.plan(my_plan) == moveit::core::MoveItErrorCode::SUCCESS);
   
-if (success) {
-  auto rc = move_group_interface.execute(my_plan);
+  if (success) {
+    auto rc = move_group_interface.execute(my_plan);
   
 
-	ROS_INFO_NAMED("tutorial", "Visualizing plan 1 as trajectory line");
-	visual_tools.publishAxisLabeled(target_pose1, "pose1");
-	visual_tools.publishText(text_pose, "Pose Goal", rvt::WHITE, rvt::XLARGE);
-	visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group);
-	visual_tools.trigger();
-	visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
+    ROS_INFO_NAMED("tutorial", "Visualizing plan 1 as trajectory line");
+    visual_tools.publishAxisLabeled(target_pose1, "pose1");
+    visual_tools.publishText(text_pose, "Pose Goal", rvt::WHITE, rvt::XLARGE);
+    visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group);
+    visual_tools.trigger();
+    visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
 
 
   
-  
-  if (rc == moveit::core::MoveItErrorCode::SUCCESS) {
-    const auto& jt   = my_plan.trajectory_.joint_trajectory;		// joint values with time stamp
-    const auto& last = jt.points.back();				// last joint vlaue group with time stamp
+    if (rc == moveit::core::MoveItErrorCode::SUCCESS) {
+      const auto& jt   = my_plan.trajectory_.joint_trajectory;		// joint values with time stamp
+      const auto& last = jt.points.back();				// last joint vlaue group with time stamp
 
 
       sensor_msgs::JointState cmd;
@@ -185,12 +184,10 @@ if (success) {
       js_cmd_pub.publish(cmd);
 
 
-
-
+    }
   }
-}
 
   
- ros::shutdown();
+  ros::shutdown();
   return 0;
 }

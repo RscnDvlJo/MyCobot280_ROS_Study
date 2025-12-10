@@ -14,6 +14,11 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_ros_planning_interface
   moveit_visual_tools
   moveit_msgs
+  
+  tf2
+  tf2_ros
+  tf2_geometry_msgs
+  
 )
 find_package(Eigen3 REQUIRED NO_MODULE)
 ## System dependencies are found with CMake's conventions

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="sphere">
+  <link name="world"/>
+
+  <link name="dome">
+    <visual>
+      <geometry>
+        <mesh filename="package://cobotrail/meshes/objects/object.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+
+    </visual>
+  </link>
+  
+  <joint name="dome_fixed_joint" type="fixed">
+    <axis xyz="0 0 0"/>
+    <parent link="world"/>
+    <child link="dome"/>
+    <origin xyz="0.35 0 0.15" rpy="0 0 0"/>
+  </joint>
+
+
+</robot>
+

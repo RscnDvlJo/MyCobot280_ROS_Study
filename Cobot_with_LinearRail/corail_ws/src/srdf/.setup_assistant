@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: cobotrail
+    relative_path: urdf/robots/mycobot_280.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/firefighter.srdf
+  CONFIG:
+    author_name: RscnDvlJo
+    author_email: RscnDvlJo@gmail.com
+    generated_timestamp: 1766211515

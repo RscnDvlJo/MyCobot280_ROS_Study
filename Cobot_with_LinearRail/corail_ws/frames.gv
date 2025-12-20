@@ -1,0 +1,19 @@
+digraph G {
+"g_base" -> "joint1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1766211925.808 sec old)\nBuffer length: 0.000 sec\n"];
+"world" -> "linear_rail"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1766211925.808 sec old)\nBuffer length: 0.000 sec\n"];
+"g_base" -> "dome"[label="Broadcaster: /object/robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1766211925.808 sec old)\nBuffer length: 0.000 sec\n"];
+"joint1" -> "joint2"[label="Broadcaster: /robot_state_publisher\nAverage rate: 32.315 Hz\nMost recent transform: 1766211925.767 ( 0.042 sec old)\nBuffer length: 4.920 sec\n"];
+"joint2" -> "joint3"[label="Broadcaster: /robot_state_publisher\nAverage rate: 32.315 Hz\nMost recent transform: 1766211925.767 ( 0.042 sec old)\nBuffer length: 4.920 sec\n"];
+"joint3" -> "joint4"[label="Broadcaster: /robot_state_publisher\nAverage rate: 32.315 Hz\nMost recent transform: 1766211925.767 ( 0.042 sec old)\nBuffer length: 4.920 sec\n"];
+"joint4" -> "joint5"[label="Broadcaster: /robot_state_publisher\nAverage rate: 32.315 Hz\nMost recent transform: 1766211925.767 ( 0.042 sec old)\nBuffer length: 4.920 sec\n"];
+"joint5" -> "joint6"[label="Broadcaster: /robot_state_publisher\nAverage rate: 32.315 Hz\nMost recent transform: 1766211925.767 ( 0.042 sec old)\nBuffer length: 4.920 sec\n"];
+"joint6" -> "joint6_flange"[label="Broadcaster: /robot_state_publisher\nAverage rate: 32.315 Hz\nMost recent transform: 1766211925.767 ( 0.042 sec old)\nBuffer length: 4.920 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1766211925.808"[ shape=plaintext ] ;
+ }->"g_base";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1766211925.808"[ shape=plaintext ] ;
+ }->"world";
+}

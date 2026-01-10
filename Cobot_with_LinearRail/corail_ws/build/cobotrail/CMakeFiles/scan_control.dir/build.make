@@ -70,45 +70,16 @@ cobotrail/CMakeFiles/scan_control.dir/src/scan_control.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scan_control.dir/src/scan_control.cpp.s"
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/scan_control.cpp -o CMakeFiles/scan_control.dir/src/scan_control.cpp.s
 
-cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.o: cobotrail/CMakeFiles/scan_control.dir/flags.make
-cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/robot_description.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.o"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scan_control.dir/src/robot_description.cpp.o -c /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/robot_description.cpp
-
-cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scan_control.dir/src/robot_description.cpp.i"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/robot_description.cpp > CMakeFiles/scan_control.dir/src/robot_description.cpp.i
-
-cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scan_control.dir/src/robot_description.cpp.s"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/robot_description.cpp -o CMakeFiles/scan_control.dir/src/robot_description.cpp.s
-
-cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o: cobotrail/CMakeFiles/scan_control.dir/flags.make
-cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/sphere_path_planning.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o -c /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/sphere_path_planning.cpp
-
-cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.i"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/sphere_path_planning.cpp > CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.i
-
-cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.s"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/sphere_path_planning.cpp -o CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.s
-
 # Object files for target scan_control
 scan_control_OBJECTS = \
-"CMakeFiles/scan_control.dir/src/scan_control.cpp.o" \
-"CMakeFiles/scan_control.dir/src/robot_description.cpp.o" \
-"CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o"
+"CMakeFiles/scan_control.dir/src/scan_control.cpp.o"
 
 # External object files for target scan_control
 scan_control_EXTERNAL_OBJECTS =
 
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: cobotrail/CMakeFiles/scan_control.dir/src/scan_control.cpp.o
-/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.o
-/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: cobotrail/CMakeFiles/scan_control.dir/build.make
+/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/libcobotrail_lib.so
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: /opt/ros/noetic/lib/libmoveit_common_planning_interface_objects.so
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: /opt/ros/noetic/lib/libmoveit_planning_scene_interface.so
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: /opt/ros/noetic/lib/libmoveit_move_group_interface.so
@@ -215,7 +186,7 @@ scan_control_EXTERNAL_OBJECTS =
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control: cobotrail/CMakeFiles/scan_control.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control"
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scan_control.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -298,19 +298,6 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named cobotrail_lib
-
-# Build rule for target.
-cobotrail_lib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cobotrail_lib
-.PHONY : cobotrail_lib
-
-# fast build rule for target.
-cobotrail_lib/fast:
-	$(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/build
-.PHONY : cobotrail_lib/fast
-
-#=============================================================================
 # Target rules for targets named scan_control
 
 # Build rule for target.
@@ -322,6 +309,19 @@ scan_control: cmake_check_build_system
 scan_control/fast:
 	$(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/build
 .PHONY : scan_control/fast
+
+#=============================================================================
+# Target rules for targets named cobotrail_lib
+
+# Build rule for target.
+cobotrail_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cobotrail_lib
+.PHONY : cobotrail_lib
+
+# fast build rule for target.
+cobotrail_lib/fast:
+	$(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/build
+.PHONY : cobotrail_lib/fast
 
 #=============================================================================
 # Target rules for targets named graph_msgs_generate_messages_py
@@ -1555,8 +1555,8 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... cobotrail_lib"
 	@echo "... scan_control"
+	@echo "... cobotrail_lib"
 	@echo "... graph_msgs_generate_messages_py"
 	@echo "... graph_msgs_generate_messages_nodejs"
 	@echo "... graph_msgs_generate_messages_eus"

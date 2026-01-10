@@ -31,6 +31,8 @@ sensor_msgs/JointState.h
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include/cobotrail/sensor_msgs/JointState.h
 
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include/cobotrail/setting.h
+array
+-
 
 /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include/cobotrail/sphere_path_planning.h
 ros/ros.h

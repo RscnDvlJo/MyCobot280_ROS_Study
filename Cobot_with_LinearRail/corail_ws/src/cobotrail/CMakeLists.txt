@@ -151,11 +151,7 @@ include
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 
-add_executable(scan_control 
-	src/scan_control.cpp
-	src/robot_description.cpp 
-	src/sphere_path_planning.cpp 
-)
+
 
 
 ## Rename C++ executable without prefix
@@ -171,9 +167,10 @@ add_executable(scan_control
 add_library(cobotrail_lib
 	src/robot_description.cpp
 	src/sphere_path_planning.cpp
+	src/setting.cpp
 )
  
-add_dependencies(scan_control
+add_dependencies(cobotrail_lib
 	${${PROJECT_NAME}_EXPORTED_TARGETS}
 	${catkin_EXPORTED_TARGETS}
 )
@@ -183,9 +180,26 @@ add_dependencies(scan_control
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
- target_link_libraries(scan_control
+ target_link_libraries(
+ 	cobotrail_lib
 	${catkin_LIBRARIES}
  )
+ 
+ 
+add_executable(scan_control 
+	src/scan_control.cpp
+
+)
+
+ target_link_libraries(scan_control
+ 	cobotrail_lib
+	${catkin_LIBRARIES}
+ )
+##	src/robot_description.cpp 
+##	src/sphere_path_planning.cpp 
+
+
+ 
 #############
 ## Install ##
 #############

@@ -168,21 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-cobotrail/CMakeFiles/cobotrail_lib.dir/rule:
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cobotrail/CMakeFiles/cobotrail_lib.dir/rule
-.PHONY : cobotrail/CMakeFiles/cobotrail_lib.dir/rule
-
-# Convenience name for target.
-cobotrail_lib: cobotrail/CMakeFiles/cobotrail_lib.dir/rule
-
-.PHONY : cobotrail_lib
-
-# fast build rule for target.
-cobotrail_lib/fast:
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/build
-.PHONY : cobotrail_lib/fast
-
-# Convenience name for target.
 cobotrail/CMakeFiles/scan_control.dir/rule:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cobotrail/CMakeFiles/scan_control.dir/rule
 .PHONY : cobotrail/CMakeFiles/scan_control.dir/rule
@@ -196,6 +181,21 @@ scan_control: cobotrail/CMakeFiles/scan_control.dir/rule
 scan_control/fast:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/build
 .PHONY : scan_control/fast
+
+# Convenience name for target.
+cobotrail/CMakeFiles/cobotrail_lib.dir/rule:
+	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f CMakeFiles/Makefile2 cobotrail/CMakeFiles/cobotrail_lib.dir/rule
+.PHONY : cobotrail/CMakeFiles/cobotrail_lib.dir/rule
+
+# Convenience name for target.
+cobotrail_lib: cobotrail/CMakeFiles/cobotrail_lib.dir/rule
+
+.PHONY : cobotrail_lib
+
+# fast build rule for target.
+cobotrail_lib/fast:
+	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/build
+.PHONY : cobotrail_lib/fast
 
 # Convenience name for target.
 cobotrail/CMakeFiles/graph_msgs_generate_messages_py.dir/rule:
@@ -1599,7 +1599,6 @@ src/robot_description.o: src/robot_description.cpp.o
 # target to build an object file
 src/robot_description.cpp.o:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/robot_description.cpp.o
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.o
 .PHONY : src/robot_description.cpp.o
 
 src/robot_description.i: src/robot_description.cpp.i
@@ -1609,7 +1608,6 @@ src/robot_description.i: src/robot_description.cpp.i
 # target to preprocess a source file
 src/robot_description.cpp.i:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/robot_description.cpp.i
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.i
 .PHONY : src/robot_description.cpp.i
 
 src/robot_description.s: src/robot_description.cpp.s
@@ -1619,7 +1617,6 @@ src/robot_description.s: src/robot_description.cpp.s
 # target to generate assembly for a file
 src/robot_description.cpp.s:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/robot_description.cpp.s
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/src/robot_description.cpp.s
 .PHONY : src/robot_description.cpp.s
 
 src/scan_control.o: src/scan_control.cpp.o
@@ -1649,6 +1646,33 @@ src/scan_control.cpp.s:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/src/scan_control.cpp.s
 .PHONY : src/scan_control.cpp.s
 
+src/setting.o: src/setting.cpp.o
+
+.PHONY : src/setting.o
+
+# target to build an object file
+src/setting.cpp.o:
+	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/setting.cpp.o
+.PHONY : src/setting.cpp.o
+
+src/setting.i: src/setting.cpp.i
+
+.PHONY : src/setting.i
+
+# target to preprocess a source file
+src/setting.cpp.i:
+	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/setting.cpp.i
+.PHONY : src/setting.cpp.i
+
+src/setting.s: src/setting.cpp.s
+
+.PHONY : src/setting.s
+
+# target to generate assembly for a file
+src/setting.cpp.s:
+	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/setting.cpp.s
+.PHONY : src/setting.cpp.s
+
 src/sphere_path_planning.o: src/sphere_path_planning.cpp.o
 
 .PHONY : src/sphere_path_planning.o
@@ -1656,7 +1680,6 @@ src/sphere_path_planning.o: src/sphere_path_planning.cpp.o
 # target to build an object file
 src/sphere_path_planning.cpp.o:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/sphere_path_planning.cpp.o
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o
 .PHONY : src/sphere_path_planning.cpp.o
 
 src/sphere_path_planning.i: src/sphere_path_planning.cpp.i
@@ -1666,7 +1689,6 @@ src/sphere_path_planning.i: src/sphere_path_planning.cpp.i
 # target to preprocess a source file
 src/sphere_path_planning.cpp.i:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/sphere_path_planning.cpp.i
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.i
 .PHONY : src/sphere_path_planning.cpp.i
 
 src/sphere_path_planning.s: src/sphere_path_planning.cpp.s
@@ -1676,7 +1698,6 @@ src/sphere_path_planning.s: src/sphere_path_planning.cpp.s
 # target to generate assembly for a file
 src/sphere_path_planning.cpp.s:
 	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/cobotrail_lib.dir/build.make cobotrail/CMakeFiles/cobotrail_lib.dir/src/sphere_path_planning.cpp.s
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build && $(MAKE) -f cobotrail/CMakeFiles/scan_control.dir/build.make cobotrail/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.s
 .PHONY : src/sphere_path_planning.cpp.s
 
 # Help Target
@@ -1690,8 +1711,8 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... test"
-	@echo "... cobotrail_lib"
 	@echo "... scan_control"
+	@echo "... cobotrail_lib"
 	@echo "... graph_msgs_generate_messages_py"
 	@echo "... graph_msgs_generate_messages_nodejs"
 	@echo "... graph_msgs_generate_messages_eus"
@@ -1793,6 +1814,9 @@ help:
 	@echo "... src/scan_control.o"
 	@echo "... src/scan_control.i"
 	@echo "... src/scan_control.s"
+	@echo "... src/setting.o"
+	@echo "... src/setting.i"
+	@echo "... src/setting.s"
 	@echo "... src/sphere_path_planning.o"
 	@echo "... src/sphere_path_planning.i"
 	@echo "... src/sphere_path_planning.s"

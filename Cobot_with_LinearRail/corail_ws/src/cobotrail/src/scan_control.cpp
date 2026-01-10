@@ -44,7 +44,14 @@ bool solveWaypointIK(
     const std::array<double,6>&,   // {base, shoulder, elbow, wrist1, wrist2, wrist3}
     std::vector<double>&);
 
+bool checkPoseStability(const moveit::core::JointModelGroup*, robot_state::RobotState&);
 
+
+bool moveToNamedPose(
+    moveit::planning_interface::MoveGroupInterface&,
+    const std::string&);
+    
+    
 
 int main(int argc, char** argv){
 
@@ -111,7 +118,7 @@ int main(int argc, char** argv){
 	
 	// 5. make visual tools and reference frame
 	std::shared_ptr<moveit_visual_tools::MoveItVisualTools> visual_tools;
-	visual_tools = std::make_shared<moveit_visual_tools::MoveItVisualTools>("g_base");
+	visual_tools = std::make_shared<moveit_visual_tools::MoveItVisualTools>("world");
 
 
 	setVisualizer(*visual_tools);
@@ -121,6 +128,8 @@ int main(int argc, char** argv){
 	// 6. define parameters for IK solve
 
 	robot_state::RobotState* kin_state = rbdscp.ret_kinematic_state();
+	robot_state::RobotState kin_state_candidate = *(kin_state);
+	
 	
 	if (!kin_state) {
 		ROS_ERROR("KinematicState pointer is NULL!");
@@ -131,8 +140,8 @@ int main(int argc, char** argv){
 
 
 	auto& mgi = rbdscp.trajectoryParams()->move_group_interface;
-	const moveit::core::JointModelGroup* jmg = rbdscp.trajectoryParams()->joint_model_group;
-	
+	// const moveit::core::JointModelGroup* jmg_candidate = rbdscp.trajectoryParams()->joint_model_group;
+	const moveit::core::JointModelGroup* jmg = rbdscp.trajectoryParams()->joint_model_group;	
 	
 
 	robot_state::GroupStateValidityCallbackFn cb_ignore =
@@ -140,6 +149,16 @@ int main(int argc, char** argv){
 		return true;
 	};
 
+	
+	
+	moveToNamedPose(mgi, "ready1");
+	ros::Duration(1.0).sleep();
+	moveToNamedPose(mgi, "ready2");
+	
+	visual_tools->trigger();
+	visual_tools->prompt("Press 'next' to EXECUTE this segment");
+
+	
 	
 	kinematics::KinematicsQueryOptions kqo;
 	kqo.return_approximate_solution = false;
@@ -149,7 +168,7 @@ int main(int argc, char** argv){
 
 	// 7. Get first point's IK solution and make it as prev solution
 	kin_state->setToDefaultValues();
-	bool ok0 = kin_state->setFromIK(jmg, waypoints[0], 0.1);
+	bool ok0 = kin_state->setFromIK(jmg, waypoints[0], 0.2);
 	
 	if (!ok0) {
 		ROS_ERROR("IK failed at waypoint 0");
@@ -157,7 +176,10 @@ int main(int argc, char** argv){
 	}
 	
 	std::vector<double> prev_solution;
+	std::vector<double> prev_solution_candidate;
+	
 	kin_state->copyJointGroupPositions(jmg, prev_solution);
+	prev_solution_candidate = prev_solution;
 
 	// get tip link
 	std::string tip_link = mgi.getEndEffectorLink();
@@ -170,7 +192,20 @@ int main(int argc, char** argv){
 
 
 	// 8. IK solve
-	const std::array<double,6> relaxed_limits = {1.2, 1.2, 1.4, 1.8, 1.8, 1.8};
+
+	/*
+	static size_t rail_idx = SIZE_MAX;
+	if (rail_idx == SIZE_MAX) {
+		const auto& vars = jmg->getVariableNames();
+		auto it = std::find(vars.begin(), vars.end(), "linear_slide");
+		if (it == vars.end()) {
+			ROS_FATAL("linear_slide joint not found");
+			ros::shutdown();
+		}
+		rail_idx = std::distance(vars.begin(), it);
+	}*/
+
+
 	
 	for (size_t i = 1; i < waypoints.size(); i++) {
 	
@@ -193,42 +228,98 @@ int main(int argc, char** argv){
 		}
 
 
+		/*
 		robot_state::RobotState* kin_state = rbdscp.ret_kinematic_state();
+		*/
 		if (!kin_state) {
 			ROS_ERROR("KinematicState pointer is NULL!");
 			break;
 		}
+		
+				
+		size_t dof = jmg->getVariableCount();
+		std::vector<double> joint_values(dof, 0.0);
+		std::vector<double> joint_values_candidate(dof, 0.0);
 
-		std::vector<double> joint_values(6, 0.0);
 
+		bool stable_found = false;
+		while(1){
+			
+			
+			// Solve IK & make continuous solution
+			bool ok = solveWaypointIK(
+			    kin_state_candidate,     	// RobotState&
+			    jmg,     			// JointModelGroup*
+			    pose_eig,          	// target pose
+			    tip_link,          	// tip
+			    prev_solution_candidate,   // previous solution
+			    (int)i,            	// waypoint index
+			    FREE_IK_COUNT,     	// free IK count
+			    TIMEOUT_FREE,      	// free timeout
+			    TIMEOUT_STRICT,    	// strict timeout
+			    TIMEOUT_RETRY,     	// retry timeout
+			    cb_ignore,         	// validity callback
+			    kqo,               	// KinematicsQueryOptions
+			    makeRampedConsistency, 	// function reference OK
+			    makeConsistencyVec,    	// function reference OK
+			    relaxed_limits,        	// array<double,6>
+			    joint_values_candidate     // output vector
+			);
 
-		// Solve IK & make continuous solution
-		bool ok = solveWaypointIK(
-		    *kin_state,        // RobotState&
-		    jmg,               // JointModelGroup*
-		    pose_eig,          // target pose
-		    tip_link,          // tip
-		    prev_solution,     // previous solution
-		    (int)i,            // waypoint index
-		    FREE_IK_COUNT,     // free IK count
-		    TIMEOUT_FREE,      // free timeout
-		    TIMEOUT_STRICT,    // strict timeout
-		    TIMEOUT_RETRY,     // retry timeout
-		    cb_ignore,         // validity callback
-		    kqo,               // KinematicsQueryOptions
-		    makeRampedConsistency, // function reference OK
-		    makeConsistencyVec,    // function reference OK
-		    relaxed_limits,        // array<double,6>
-		    joint_values           // output vector
-		);
+			if (!ok) {
+				ROS_WARN("IK not found for waypoint %zu", i);
+				continue;
+			}
+			
+		
+		
+				
+			bool pose_stability = checkPoseStability(jmg, kin_state_candidate);
 
-		if (!ok) {
-			ROS_WARN("IK not found for waypoint %zu", i);
+			if (pose_stability){
+				*kin_state = kin_state_candidate;
+				joint_values = joint_values_candidate;
+				rail_count = 1;
+				stable_found = true;
+				break;
+			}
+			else{
+			
+			
+			
+			
+			
+				 prev_solution_candidate[6] -= rail_resol*rail_count;
+				
+				//size_t rail_idx = jmg->getVariableIndex("linear_slide");
+				//prev_solution_candidate[rail_idx] -= rail_resol * rail_count;
+
+				
+				kin_state_candidate.setJointGroupPositions(jmg, prev_solution_candidate);	 
+				
+				rail_count = rail_count + 1;
+				ROS_INFO("HELLO");
+				if (rail_count >= 100){
+					ROS_ERROR("Can not find stable pose solution");
+					break;
+				}
+
+			
+			}
+		}
+		
+		
+		if(!stable_found){
+			ROS_ERROR("Skip due to instability");
 			continue;
 		}
 
-		
 
+
+
+
+		
+		// jmg
 
 
 		ROS_INFO("IK Success for waypoint %zu -> [%.3f, %.3f, %.3f, %.3f, %.3f, %.3f]",
@@ -240,13 +331,13 @@ int main(int argc, char** argv){
 		{
 			auto* js = rbdscp.ret_joint_state();
 			//js->position = prev_solution;
-
+			
 			  for (size_t k = 0; k < prev_solution.size(); ++k) {
 			    js->position[k] = prev_solution[k];
 
 			  }
 			
-			js->position[6] = js->position[6] + 0.01;
+			// js->position[6] = js->position[6] + 0.01;
 
 			
 			ros::Rate rr(100);             // 100Hz
@@ -283,7 +374,7 @@ int main(int argc, char** argv){
 
 	
 		
-		// 4) execute
+		// execute
 		auto exec_rc = mgi.execute(plan);
 		if (exec_rc != moveit::core::MoveItErrorCode::SUCCESS) {
 			ROS_WARN("Execution failed for waypoint %zu", i);
@@ -292,6 +383,7 @@ int main(int argc, char** argv){
 
 
 		prev_solution = joint_values;
+		prev_solution_candidate = prev_solution;
 
 	}
 	ros::waitForShutdown();
@@ -468,6 +560,81 @@ bool solveWaypointIK(
 
 	return true;
 	
-
 } 
+
+
+		
+bool checkPoseStability(const moveit::core::JointModelGroup* jmg, robot_state::RobotState& kin_state){
+
+	Eigen::MatrixXd J;
+	const std::string& tip = jmg->getLinkModelNames().back();
+
+	kin_state.getJacobian(jmg, kin_state.getLinkModel(tip), Eigen::Vector3d::Zero(), J, false);
+
+
+	Eigen::JacobiSVD<Eigen::MatrixXd> svd(J);
+	double sigma_min = svd.singularValues().minCoeff();
+
+	double cond = svd.singularValues()(0) / sigma_min;
+	
+	
+	if (cond > 1000.0) 
+		return false;
+	else
+		return true;
+
+	/*
+	if (sigma_min < 0.02)
+		return false;
+	else
+		return true;
+	*/
+
+
+}
+
+
+bool moveToNamedPose(
+    moveit::planning_interface::MoveGroupInterface& move_group,
+    const std::string& pose_name
+    )
+{
+	ROS_INFO_STREAM("Request move to named pose: " << pose_name);
+	bool execute = true;
+
+	move_group.setStartStateToCurrentState();
+
+
+	if (!move_group.setNamedTarget(pose_name))
+		{
+		ROS_ERROR_STREAM("Named target not found: " << pose_name);
+		return false;
+		}
+
+	moveit::planning_interface::MoveGroupInterface::Plan plan;
+	auto result = move_group.plan(plan);
+
+	if (result != moveit::planning_interface::MoveItErrorCode::SUCCESS)
+		{
+		ROS_ERROR_STREAM("Planning failed for pose: " << pose_name);
+		return false;
+		}
+
+	ROS_INFO_STREAM("Planning succeeded for pose: " << pose_name);
+
+	if (execute)
+	{
+		auto exec_result = move_group.execute(plan);
+		if (exec_result != moveit::planning_interface::MoveItErrorCode::SUCCESS)
+		{
+		    ROS_ERROR_STREAM("Execution failed for pose: " << pose_name);
+		    return false;
+		}
+		ROS_INFO_STREAM("Execution completed for pose: " << pose_name);
+	}
+
+	return true;
+}
+
+
 

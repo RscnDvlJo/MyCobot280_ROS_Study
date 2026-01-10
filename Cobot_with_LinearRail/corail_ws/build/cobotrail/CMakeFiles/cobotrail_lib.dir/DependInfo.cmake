@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/robot_description.cpp" "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail/CMakeFiles/cobotrail_lib.dir/src/robot_description.cpp.o"
+  "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/setting.cpp" "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail/CMakeFiles/cobotrail_lib.dir/src/setting.cpp.o"
   "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/sphere_path_planning.cpp" "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build/cobotrail/CMakeFiles/cobotrail_lib.dir/src/sphere_path_planning.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

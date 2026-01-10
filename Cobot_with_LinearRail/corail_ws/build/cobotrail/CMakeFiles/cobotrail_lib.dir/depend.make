@@ -473,6 +473,9 @@ cobotrail/CMakeFiles/cobotrail_lib.dir/src/robot_description.cpp.o: /usr/include
 cobotrail/CMakeFiles/cobotrail_lib.dir/src/robot_description.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 cobotrail/CMakeFiles/cobotrail_lib.dir/src/robot_description.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+cobotrail/CMakeFiles/cobotrail_lib.dir/src/setting.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include/cobotrail/setting.h
+cobotrail/CMakeFiles/cobotrail_lib.dir/src/setting.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/setting.cpp
+
 cobotrail/CMakeFiles/cobotrail_lib.dir/src/sphere_path_planning.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include/cobotrail/setting.h
 cobotrail/CMakeFiles/cobotrail_lib.dir/src/sphere_path_planning.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include/cobotrail/sphere_path_planning.h
 cobotrail/CMakeFiles/cobotrail_lib.dir/src/sphere_path_planning.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/src/sphere_path_planning.cpp

@@ -34,11 +34,12 @@ def callback(data):
 
 	data_list = []
 	for index, value in enumerate(data.position):
-	radians_to_angles = round(math.degrees(value), 2)
-	data_list.append(radians_to_angles)
+		radians_to_angles = round(math.degrees(value), 2)
+		data_list.append(radians_to_angles)
 
 	rospy.loginfo(rospy.get_caller_id() + "%s", data_list)
 	mc.send_angles(data_list, 25)
+
 
 
 def listener():

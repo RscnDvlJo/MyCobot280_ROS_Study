@@ -9,10 +9,12 @@
 #ifndef SETTING_H_
 #define SETTING_H_
 
+#include <array>
+
+
 #define num_angle_theta 4
 #define num_angle_phi 4
-
-
+ 
 
 // Sphere Path Planning
 const double theta_shift = 60;
@@ -32,7 +34,11 @@ const double TIMEOUT_STRICT = 0.10;		// time out for consistency IK
 const double TIMEOUT_RETRY = 0.50;		// time out for retry IK
 const bool  DEBUG_IGNORE_COLLISION = false;	// for debug, if this parameter is true, then ignore collision
 
-extern const std::array<double,6>& relaxed_limits;
+extern const std::array<double,6> relaxed_limits;
+
+
+extern double rail_resol;
+extern double rail_count;
 
 
 #endif

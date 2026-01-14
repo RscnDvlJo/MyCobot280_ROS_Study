@@ -4,7 +4,7 @@
 
 
 
-<arg name="robot" default="$(find cobotrail)/urdf/robots/mycobot_280.urdf" />
+<arg name="robot" default="$(find module)/urdf/robots/mycobot_280.urdf" />
 <param name="robot_description" textfile="$(arg robot)"/>
 <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
 

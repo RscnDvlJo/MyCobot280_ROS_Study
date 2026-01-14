@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/install
+
+Name: module
+Description: Description of module
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lmain_lib
+Requires: roscpp geometry_msgs moveit_core moveit_ros_planning_interface moveit_visual_tools moveit_msgs

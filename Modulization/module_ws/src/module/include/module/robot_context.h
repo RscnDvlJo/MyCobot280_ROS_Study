@@ -18,8 +18,6 @@
 
 
 struct RobotContext{
-
-	RobotContext() = default;
 	explicit RobotContext(const std::string& group);
 
 

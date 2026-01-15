@@ -22,6 +22,19 @@ Config::Config(){
 	
 	m_pathPlannerConfig.num_angle_theta = 4.0;
 	m_pathPlannerConfig.num_angle_phi = 4.0;
+	
+		
+	m_ikConfig.free_ik_count = 5;
+
+	m_ikConfig.timeout_free = 0.2;
+	m_ikConfig.timeout_strict = 0.1;
+	m_ikConfig.timeout_retry = 0.5;
+
+	m_ikConfig.ignore_collision = false;
+
+	m_ikConfig.kqo.return_approximate_solution = false;
+
+	m_ikConfig.relaxed_limits = { 1.2, 1.2, 1.4, 1.8, 1.8, 1.8};
 
 }
 
@@ -37,4 +50,8 @@ BasicConfig *Config::basicConfig(void){
 
 PathPlannerConfig *Config::pathPlannerConfig(void){
 	return &m_pathPlannerConfig;
+}
+
+IKConfig *Config::ikConfig(void){
+	return &m_ikConfig;
 }

@@ -141,6 +141,7 @@ add_library(main_lib
 	src/robot_context.cpp
 	src/config.cpp
 	src/path_planner.cpp
+	src/ik_solver.cpp
 )
 
 add_dependencies(main_lib

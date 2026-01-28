@@ -13,6 +13,8 @@ array
 -
 moveit/kinematics_base/kinematics_base.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/moveit/kinematics_base/kinematics_base.h
+Eigen/Core
+-
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/ik_solver.h
 config.h
@@ -21,6 +23,8 @@ robot_context.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/robot_context.h
 state_handler.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler.h
+angles/angles.h
+-
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/robot_context.h
 string
@@ -35,6 +39,10 @@ moveit_visual_tools/moveit_visual_tools.h
 -
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler.h
+moveit/robot_state/robot_state.h
+-
+moveit/robot_model/robot_model.h
+-
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/ik_solver.cpp
 module/ik_solver.h
@@ -266,6 +274,12 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 actionlib_msgs/GoalStatus.h
+-
+
+/opt/ros/noetic/include/angles/angles.h
+algorithm
+-
+cmath
 -
 
 /opt/ros/noetic/include/class_loader/class_loader.hpp

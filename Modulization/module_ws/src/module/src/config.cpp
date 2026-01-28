@@ -9,7 +9,9 @@
  
  
 Config::Config(){
-	m_basicConfig.group_name = "arm";
+
+	m_basicConfig.group_name_only_robot = "arm";
+	m_basicConfig.group_name_robot_with_rail = "arm_with_rail";
 	
 	m_pathPlannerConfig.pos_tol = 0.001;
 	m_pathPlannerConfig.rot_tol = 0.01;
@@ -23,9 +25,21 @@ Config::Config(){
 	m_pathPlannerConfig.num_angle_theta = 4.0;
 	m_pathPlannerConfig.num_angle_phi = 4.0;
 	
+	m_pathPlannerConfig.radius = 0.112;
+	m_pathPlannerConfig.dist = 0.350;
+	m_pathPlannerConfig.center = Eigen::Vector3d(0.000, 0.150, 0.010);
+
+	 
 		
 	m_ikConfig.free_ik_count = 5;
-
+	
+	
+	m_ikConfig.attempts_free = 1;
+	m_ikConfig.attempts_strict = 1;
+	m_ikConfig.attempts_retry = 1;
+	
+	
+	
 	m_ikConfig.timeout_free = 0.2;
 	m_ikConfig.timeout_strict = 0.1;
 	m_ikConfig.timeout_retry = 0.5;

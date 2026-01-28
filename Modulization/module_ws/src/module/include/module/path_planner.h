@@ -18,56 +18,37 @@
 
 
 #include "module/config.h"
+#include "module/trajectory_manager.h"
 
 class PathPlanner{
-
 	private:
+		PathPlannerConfig& m_pathConfig;
+
+		Eigen::Vector3d m_center{0,0,0};
+		Eigen::Vector3d m_unit_vec{0,0,1};
+
 		double m_radius;
-		double m_x, m_y, m_z; 
 		double m_dist;
-		
-		double m_theta_shift;
-		double m_theta_move;
-		
-		double m_phi_shift;
-		double m_phi_move;
-		
-		double m_num_angle_theta;
-		double m_num_angle_phi;
-		
-		
-		int m_pathsize;
-	
+
 		Eigen::Matrix3d m_rotMat;
 		Eigen::Matrix3d m_robotRotMat;
-		
-		
-		Eigen::Matrix3d m_rotMat_spin;
+
 		Eigen::Matrix3d m_rotMat_phi;
 		Eigen::Matrix3d m_rotMat_theta;
+		Eigen::Matrix3d m_rotMat_spin;
 
-		Eigen::MatrixXd m_robotQuaternion;
-		Eigen::MatrixXd m_robotJointPath;
-
-		Eigen::MatrixXd m_path; 
-		Eigen::Vector3d m_unit_vec;
-		
-	
-		PathPlannerConfig& m_pathPlannerConfig;
-		// Config& m_config;
-		
-		void calcTempRotMat(double, double);
+		// ===== 내부 helper =====
+		void calcTempRotMat(double phi, double theta);
 		void calcTempRobotRotMat();
-		
-		void calcRobotQuaternion(Eigen::Matrix3d, int);
-	
+		Eigen::Quaterniond calcRobotQuaternion() const;
+
+
 	public:
-		PathPlanner(double, double, double, double, double, PathPlannerConfig&);
+		explicit PathPlanner(PathPlannerConfig&);
 		~PathPlanner();
 
-		void genPathNPose();
-		std::vector<geometry_msgs::Pose> makeWaypoints();
-};
+		PathData genPathNPose();
+	};
 
 
 #endif

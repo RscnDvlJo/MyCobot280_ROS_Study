@@ -3,9 +3,12 @@
 
 module/CMakeFiles/module.dir/src/main.cpp.o
  /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/config.h
+ /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/ik_solver.h
  /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/main.h
  /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/path_planner.h
  /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/robot_context.h
+ /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler.h
+ /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_manager.h
  /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/main.cpp
  /opt/ros/noetic/include/actionlib/action_definition.h
  /opt/ros/noetic/include/actionlib/client/action_client.h
@@ -27,6 +30,7 @@ module/CMakeFiles/module.dir/src/main.cpp.o
  /opt/ros/noetic/include/actionlib_msgs/GoalID.h
  /opt/ros/noetic/include/actionlib_msgs/GoalStatus.h
  /opt/ros/noetic/include/actionlib_msgs/GoalStatusArray.h
+ /opt/ros/noetic/include/angles/angles.h
  /opt/ros/noetic/include/class_loader/class_loader.hpp
  /opt/ros/noetic/include/class_loader/class_loader_core.hpp
  /opt/ros/noetic/include/class_loader/exceptions.hpp

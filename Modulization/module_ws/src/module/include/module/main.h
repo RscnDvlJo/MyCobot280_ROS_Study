@@ -12,5 +12,11 @@
 #include "robot_context.h"
 #include "config.h"
 #include "path_planner.h"
+#include "ik_solver.h"
+#include "path_planner.h"
+#include "robot_context"
+#include "state_handler"
+#include "state_publisher"
+#include "trajectory_manager.h"
 
 #endif

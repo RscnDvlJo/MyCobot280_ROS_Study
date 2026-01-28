@@ -9,13 +9,13 @@
 #include "config.h"
 #include "robot_context.h"
 #include "state_handler.h"
-
+#include <angles/angles.h>
 
 class IKSolver{
 	private:
 		IKConfig& m_iKConfig;
 		RobotContext& m_robotContext;
-
+		StateHandler& m_stateHandler;
 
 		moveit::core::RobotState& m_robot_state;
 		const moveit::core::JointModelGroup* m_jmg;
@@ -23,22 +23,32 @@ class IKSolver{
 
 		int m_free_ik_count;
 
+		unsigned int m_attempts_free;
+		unsigned int m_attempts_strict;
+		unsigned int m_attempts_retry;
+
 		double m_timeout_free;
 		double m_timeout_strict;
 		double m_timeout_retry;
 
 		bool m_ignore_collision;
-		robot_state::GroupStateValidityCallbackFn m_validity_cb;
+		moveit::core::GroupStateValidityCallbackFn m_validity_cb;
 
 		kinematics::KinematicsQueryOptions m_kqo;
+		
 
 		std::array<double, 6> m_relaxed_limits;
 
+		std::vector<double> makeConsistencyVec(const moveit::core::JointModelGroup*, double, double, double, double, double, double) const;
 
+
+		std::vector<double> makeRampedConsistency(const moveit::core::JointModelGroup*, size_t) const;
+        
+        
 	public:
-		IKSolver(IKConfig&, RobotContext&, moveit::core::RobotState& );
+		IKSolver(IKConfig&, RobotContext&, StateHandler&, const moveit::core::GroupStateValidityCallbackFn&);
 		~IKSolver();
 
-		bool solveIK(std::vector<geometry_msgs::Pose>&);
+		bool solveIK(geometry_msgs::Pose&);
 
 };

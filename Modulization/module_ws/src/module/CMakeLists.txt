@@ -142,6 +142,10 @@ add_library(main_lib
 	src/config.cpp
 	src/path_planner.cpp
 	src/ik_solver.cpp
+	src/state_handler.cpp
+	src/state_publisher.cpp
+	src/trajectory_manager.cpp
+	src/path_planner.cpp
 )
 
 add_dependencies(main_lib

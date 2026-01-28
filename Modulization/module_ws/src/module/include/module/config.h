@@ -13,14 +13,16 @@
 #include <array>
 
 #include "moveit/kinematics_base/kinematics_base.h"
-
+#include <Eigen/Core>
 
 
 #define PI 3.141592653589793
 
 
 struct BasicConfig{
-	std::string group_name;
+	std::string group_name_only_robot;
+	std::string group_name_robot_with_rail;
+
 };
 
 
@@ -37,8 +39,11 @@ struct PathPlannerConfig{
 	double phi_move;	
 	
 	double num_angle_theta;
-	double num_angle_phi;		
-
+	double num_angle_phi;
+	
+	double radius;
+	double dist;		
+	Eigen::Vector3d center;
 
 };
 
@@ -48,6 +53,11 @@ struct IKConfig{
 	double timeout_free;
 	double timeout_strict;
 	double timeout_retry;
+	
+	unsigned int attempts_free;
+	unsigned int attempts_strict;
+	unsigned int attempts_retry;
+
 
 	bool ignore_collision;
 

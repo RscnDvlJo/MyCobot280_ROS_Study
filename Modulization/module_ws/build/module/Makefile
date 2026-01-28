@@ -1727,6 +1727,87 @@ src/robot_context.cpp.s:
 	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/robot_context.cpp.s
 .PHONY : src/robot_context.cpp.s
 
+src/state_handler.o: src/state_handler.cpp.o
+
+.PHONY : src/state_handler.o
+
+# target to build an object file
+src/state_handler.cpp.o:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/state_handler.cpp.o
+.PHONY : src/state_handler.cpp.o
+
+src/state_handler.i: src/state_handler.cpp.i
+
+.PHONY : src/state_handler.i
+
+# target to preprocess a source file
+src/state_handler.cpp.i:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/state_handler.cpp.i
+.PHONY : src/state_handler.cpp.i
+
+src/state_handler.s: src/state_handler.cpp.s
+
+.PHONY : src/state_handler.s
+
+# target to generate assembly for a file
+src/state_handler.cpp.s:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/state_handler.cpp.s
+.PHONY : src/state_handler.cpp.s
+
+src/state_publisher.o: src/state_publisher.cpp.o
+
+.PHONY : src/state_publisher.o
+
+# target to build an object file
+src/state_publisher.cpp.o:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/state_publisher.cpp.o
+.PHONY : src/state_publisher.cpp.o
+
+src/state_publisher.i: src/state_publisher.cpp.i
+
+.PHONY : src/state_publisher.i
+
+# target to preprocess a source file
+src/state_publisher.cpp.i:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/state_publisher.cpp.i
+.PHONY : src/state_publisher.cpp.i
+
+src/state_publisher.s: src/state_publisher.cpp.s
+
+.PHONY : src/state_publisher.s
+
+# target to generate assembly for a file
+src/state_publisher.cpp.s:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/state_publisher.cpp.s
+.PHONY : src/state_publisher.cpp.s
+
+src/trajectory_manager.o: src/trajectory_manager.cpp.o
+
+.PHONY : src/trajectory_manager.o
+
+# target to build an object file
+src/trajectory_manager.cpp.o:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/trajectory_manager.cpp.o
+.PHONY : src/trajectory_manager.cpp.o
+
+src/trajectory_manager.i: src/trajectory_manager.cpp.i
+
+.PHONY : src/trajectory_manager.i
+
+# target to preprocess a source file
+src/trajectory_manager.cpp.i:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/trajectory_manager.cpp.i
+.PHONY : src/trajectory_manager.cpp.i
+
+src/trajectory_manager.s: src/trajectory_manager.cpp.s
+
+.PHONY : src/trajectory_manager.s
+
+# target to generate assembly for a file
+src/trajectory_manager.cpp.s:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/trajectory_manager.cpp.s
+.PHONY : src/trajectory_manager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1850,6 +1931,15 @@ help:
 	@echo "... src/robot_context.o"
 	@echo "... src/robot_context.i"
 	@echo "... src/robot_context.s"
+	@echo "... src/state_handler.o"
+	@echo "... src/state_handler.i"
+	@echo "... src/state_handler.s"
+	@echo "... src/state_publisher.o"
+	@echo "... src/state_publisher.i"
+	@echo "... src/state_publisher.s"
+	@echo "... src/trajectory_manager.o"
+	@echo "... src/trajectory_manager.i"
+	@echo "... src/trajectory_manager.s"
 .PHONY : help
 
 

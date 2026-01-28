@@ -5,6 +5,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/main_lib.dir/src/ik_solver.cpp.o"
   "CMakeFiles/main_lib.dir/src/path_planner.cpp.o"
   "CMakeFiles/main_lib.dir/src/robot_context.cpp.o"
+  "CMakeFiles/main_lib.dir/src/state_handler.cpp.o"
+  "CMakeFiles/main_lib.dir/src/state_publisher.cpp.o"
+  "CMakeFiles/main_lib.dir/src/trajectory_manager.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

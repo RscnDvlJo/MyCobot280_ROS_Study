@@ -18,15 +18,16 @@
 
 
 struct RobotContext{
-	explicit RobotContext(const std::string& group);
+	explicit RobotContext(const std::string& group, const std::string&);
 
 
 	robot_model_loader::RobotModelLoaderPtr model_loader;
 	moveit::core::RobotModelPtr robot_model;
-	
-	moveit::core::RobotStatePtr robot_state;
-	const moveit::core::JointModelGroup* jmg;
-	
+
+	const moveit::core::JointModelGroup* jmg_only_robot;
+	const moveit::core::JointModelGroup* jmg_robot_with_rail;
+
+
 	moveit::planning_interface::MoveGroupInterface mgi;
 };
 

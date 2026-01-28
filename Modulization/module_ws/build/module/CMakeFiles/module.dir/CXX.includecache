@@ -9,6 +9,22 @@
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/config.h
 string
 -
+array
+-
+moveit/kinematics_base/kinematics_base.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/moveit/kinematics_base/kinematics_base.h
+Eigen/Core
+-
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/ik_solver.h
+config.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/config.h
+robot_context.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/robot_context.h
+state_handler.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler.h
+angles/angles.h
+-
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/main.h
 robot_context.h
@@ -17,6 +33,18 @@ config.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/config.h
 path_planner.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/path_planner.h
+ik_solver.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/ik_solver.h
+path_planner.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/path_planner.h
+robot_context
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/robot_context
+state_handler
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler
+state_publisher
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_publisher
+trajectory_manager.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_manager.h
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/path_planner.h
 ros/ros.h
@@ -31,6 +59,8 @@ geometry_msgs/Pose.h
 -
 module/config.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/module/config.h
+module/trajectory_manager.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/module/trajectory_manager.h
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/robot_context.h
 string
@@ -42,6 +72,22 @@ ros/ros.h
 moveit/move_group_interface/move_group_interface.h
 -
 moveit_visual_tools/moveit_visual_tools.h
+-
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler.h
+moveit/robot_state/robot_state.h
+-
+moveit/robot_model/robot_model.h
+-
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_manager.h
+geometry_msgs/Pose.h
+-
+vector
+-
+utility
+-
+cstddef
 -
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/main.cpp
@@ -274,6 +320,12 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 actionlib_msgs/GoalStatus.h
+-
+
+/opt/ros/noetic/include/angles/angles.h
+algorithm
+-
+cmath
 -
 
 /opt/ros/noetic/include/class_loader/class_loader.hpp

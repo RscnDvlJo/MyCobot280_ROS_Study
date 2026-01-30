@@ -19,6 +19,11 @@ StatePublisher::StatePublisher(ros::NodeHandle& _nh, const moveit::core::JointMo
 	m_timer = _nh.createTimer(ros::Duration(1.0/_publish_rate_hz), &StatePublisher::timerCallback, this);
 }
 
+StatePublisher::~StatePublisher(){
+
+
+}
+
 void StatePublisher::publishJointState(double _rail_pos){
 	sensor_msgs::JointState _js;
 	_js.header.stamp = ros::Time::now();

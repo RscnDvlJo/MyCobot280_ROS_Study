@@ -81,8 +81,8 @@ bool IKSolver::solveIK(geometry_msgs::Pose& _target_pose){
 	if (_count <= m_free_ik_count) {
 
 
-		_found = m_robot_state.setFromIK(m_jmg, _target_pose, m_tip_link, m_attempts_free, m_timeout_free, m_validity_cb, _kqo_free);
-
+		// _found = m_robot_state.setFromIK(m_jmg, _target_pose, m_tip_link, m_attempts_free, m_timeout_free, m_validity_cb, _kqo_free);
+		_found = m_robot_state.setFromIK(m_jmg, _target_pose, m_tip_link, m_timeout_free, m_validity_cb, _kqo_free);
 		#ifdef ROS_BUILD
 			ROS_WARN_STREAM("[FREE IK] waypoint " << _count << (_found ? " o" : " x"));
 		#endif
@@ -91,7 +91,8 @@ bool IKSolver::solveIK(geometry_msgs::Pose& _target_pose){
 	// 2) CONSISTENCY (ramp down)
 	if (!_found) {
 		auto _cons = makeRampedConsistency(m_jmg, _count);
-		_found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link, _cons, m_attempts_strict, m_timeout_strict, m_validity_cb, _kqo_cons);
+		// _found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link, _cons, m_attempts_strict, m_timeout_strict, m_validity_cb, _kqo_cons);
+		_found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link, _cons, m_timeout_strict, m_validity_cb, _kqo_cons);
 		#ifdef ROS_BUILD
 			double _avg = _cons.empty() ? 0.0 : std::accumulate(_cons.begin(), _cons.end(), 0.0)/_cons.size();
 			ROS_WARN_STREAM("[CONSISTENCY IK] waypoint " << _count << " lim(avg)≈" << _avg << (_found ? " o" : " x"));
@@ -103,7 +104,8 @@ bool IKSolver::solveIK(geometry_msgs::Pose& _target_pose){
 		auto _cons_relaxed = makeConsistencyVec(m_jmg,
 		m_relaxed_limits[0], m_relaxed_limits[1], m_relaxed_limits[2],
 		m_relaxed_limits[3], m_relaxed_limits[4], m_relaxed_limits[5]);
-		_found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link,  _cons_relaxed,m_attempts_retry, m_timeout_retry, m_validity_cb, _kqo_rel);
+		// _found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link,  _cons_relaxed,m_attempts_retry, m_timeout_retry, m_validity_cb, _kqo_rel);
+		_found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link,  _cons_relaxed, m_timeout_retry, m_validity_cb, _kqo_rel);
 		#ifdef ROS_BUILD
 			ROS_WARN_STREAM("[RELAXED IK] waypoint " << count << (_found ? " o" : " x"));
 		#endif

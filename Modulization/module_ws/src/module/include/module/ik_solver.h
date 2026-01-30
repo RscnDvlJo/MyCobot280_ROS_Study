@@ -11,6 +11,9 @@
 #include "state_handler.h"
 #include <angles/angles.h>
 
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include <tf2_eigen/tf2_eigen.h>
+
 class IKSolver{
 	private:
 		IKConfig& m_iKConfig;

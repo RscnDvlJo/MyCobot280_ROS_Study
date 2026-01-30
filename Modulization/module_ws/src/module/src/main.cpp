@@ -22,14 +22,26 @@
 
 
 
-	size_t dof = config.jmg_only_robot->getVariableCount();
+	size_t dof = (rbcontext.jmg_only_robot)->getVariableCount();
 	StateHandler stthdl(rbcontext.robot_model, dof);
 	
 	StatePublisher sttpub(nh, rbcontext.jmg_robot_with_rail, 30, stthdl);		// Publisher
 
-	IKSolver(config.ikConfig(), rbcontext, stthdl, [](moveit::core::RobotState*, const moveit::core::JointModelGroup*, const double*) {
-		return true;
-	};);
+	moveit::core::GroupStateValidityCallbackFn validity_cb =
+		[](moveit::core::RobotState* rs,
+			const moveit::core::JointModelGroup* jmg,
+			const double* values)
+	{
+		return true;  // or collision check
+	};
+
+
+	IKSolver(
+		*config.ikConfig(),
+		rbcontext,
+		stthdl,
+		validity_cb
+	);
 	
 	
 	

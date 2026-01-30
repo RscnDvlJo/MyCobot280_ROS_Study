@@ -8,14 +8,19 @@ project(module)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  geometry_msgs
-  moveit_core
-  moveit_ros_planning_interface
-  moveit_visual_tools
-  moveit_msgs
+	roscpp
+	geometry_msgs
+	moveit_core
+	moveit_ros_planning_interface
+	moveit_visual_tools
+	moveit_msgs
+	tf2
+	tf2_ros
+	tf2_eigen
+	tf2_geometry_msgs   
 )
 find_package(Eigen3 REQUIRED NO_MODULE)
+
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -118,6 +123,11 @@ catkin_package(
 	moveit_ros_planning_interface
 	moveit_visual_tools
 	moveit_msgs
+	
+	tf2
+	tf2_ros
+	tf2_eigen
+	tf2_geometry_msgs
 )
 
 #catkin_install_python(PROGRAMS
@@ -157,6 +167,7 @@ target_link_libraries(
  	main_lib
 	${catkin_LIBRARIES}
 	Eigen3::Eigen
+
 )
  
  

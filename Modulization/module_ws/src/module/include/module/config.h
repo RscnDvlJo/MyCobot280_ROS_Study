@@ -16,7 +16,7 @@
 #include <Eigen/Core>
 
 
-#define PI 3.141592653589793
+// #define PI 3.141592653589793
 
 
 struct BasicConfig{

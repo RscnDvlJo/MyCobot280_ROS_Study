@@ -1,0 +1,8 @@
+prefix=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel
+
+Name: srdf
+Description: Description of srdf
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

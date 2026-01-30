@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/gtest/cmake_install.cmake")
+  include("/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/srdf/cmake_install.cmake")
   include("/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/module/cmake_install.cmake")
 
 endif()

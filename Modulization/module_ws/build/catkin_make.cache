@@ -1,2 +1,2 @@
-module
+module:srdf
 -DCATKIN_DEVEL_PREFIX=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/install -G Unix Makefiles

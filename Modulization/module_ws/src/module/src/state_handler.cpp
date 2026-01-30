@@ -17,6 +17,9 @@ StateHandler::StateHandler(const moveit::core::RobotModelPtr& _model, size_t _do
 	m_rbState.currentIKCount = 0;
 }
 
+StateHandler::~StateHandler(){
+
+}
 
 /*
 RbState *StateHandler::rbState(){

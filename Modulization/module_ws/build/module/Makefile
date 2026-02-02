@@ -1673,6 +1673,33 @@ src/main.cpp.s:
 	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/module.dir/build.make module/CMakeFiles/module.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/motion_planner.o: src/motion_planner.cpp.o
+
+.PHONY : src/motion_planner.o
+
+# target to build an object file
+src/motion_planner.cpp.o:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_planner.cpp.o
+.PHONY : src/motion_planner.cpp.o
+
+src/motion_planner.i: src/motion_planner.cpp.i
+
+.PHONY : src/motion_planner.i
+
+# target to preprocess a source file
+src/motion_planner.cpp.i:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_planner.cpp.i
+.PHONY : src/motion_planner.cpp.i
+
+src/motion_planner.s: src/motion_planner.cpp.s
+
+.PHONY : src/motion_planner.s
+
+# target to generate assembly for a file
+src/motion_planner.cpp.s:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_planner.cpp.s
+.PHONY : src/motion_planner.cpp.s
+
 src/path_planner.o: src/path_planner.cpp.o
 
 .PHONY : src/path_planner.o
@@ -1925,6 +1952,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/motion_planner.o"
+	@echo "... src/motion_planner.i"
+	@echo "... src/motion_planner.s"
 	@echo "... src/path_planner.o"
 	@echo "... src/path_planner.i"
 	@echo "... src/path_planner.s"

@@ -8,11 +8,22 @@
  
 #include "module/trajectory_manager.h"
 
+TrajectoryManager::TrajectoryManager(){
+
+}
+TrajectoryManager::~TrajectoryManager(){
+
+}
 
 void TrajectoryManager::setPath(PathData&& _path){
 	m_pathData = std::move(_path);
 	m_current_idx = 0;
 }
+
+void TrajectoryManager::setJointPath(const JointTrajectoryData& path) {
+	m_jointPath = path;
+}
+
 
 bool TrajectoryManager::empty() const{
 	return m_pathData.waypoints.empty();

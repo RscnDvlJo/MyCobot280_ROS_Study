@@ -36,15 +36,23 @@
 	};
 
 
-	IKSolver(
+	IKSolver ikSolver(
 		*config.ikConfig(),
 		rbcontext,
 		stthdl,
 		validity_cb
 	);
 	
-	
-	
+	PathPlanner pathplan(*config.pathPlannerConfig());
+
+	TrajectoryManager tjmanage;
+	tjmanage.setPath(pathplan.genPathNPose());
+
+
+	MotionPlanner motionplan(tjmanage, ikSolver, stthdl, rbcontext);
+	tjmanage.setJointPath(motionplan.genJointPath());
+
+
 
 	// path planner
 	// motion planner (statehandler, ik_solver)

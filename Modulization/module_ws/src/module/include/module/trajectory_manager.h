@@ -16,6 +16,15 @@
 #include <cstddef>
 
 
+using JointTrajectoryData = std::vector<std::vector<double>>;
+
+/*
+struct JointTrajectoryData {
+	std::vector<std::vector<double>> joint_path;
+};
+*/
+
+
 struct PathData{
 	std::vector<geometry_msgs::Pose> waypoints;
 };
@@ -23,24 +32,25 @@ struct PathData{
 class TrajectoryManager{
 	private:
 		PathData m_pathData;
+		JointTrajectoryData m_jointPath;
 		size_t m_current_idx{0};
 		
 	public:
 		TrajectoryManager();
 		~TrajectoryManager();
 
-		// 1) Path 주입 (초기화)
 		void setPath(PathData&&);
+		void setJointPath(const JointTrajectoryData& path);
 
-		// 2) 상태 조회
+		
 		bool empty() const;
 		size_t size() const;
 		size_t index() const;
 
-		// 3) 현재 waypoint 접근
+		
 		const geometry_msgs::Pose& current() const;
 
-		// 4) 진행 제어
+		
 		bool hasNext() const;
 		void advance();
 		void reset();

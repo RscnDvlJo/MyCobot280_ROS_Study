@@ -47,6 +47,22 @@ state_publisher.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_publisher.h
 trajectory_manager.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_manager.h
+motion_planner.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_planner.h
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_planner.h
+trajectory_manager.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_manager.h
+ik_solver.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/ik_solver.h
+state_handler.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler.h
+moveit/robot_state/robot_state.h
+-
+moveit/robot_model/robot_model.h
+-
+moveit/move_group_interface/move_group_interface.h
+-
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/path_planner.h
 ros/ros.h

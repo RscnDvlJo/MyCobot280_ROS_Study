@@ -17,5 +17,6 @@
 #include "state_handler.h"
 #include "state_publisher.h"
 #include "trajectory_manager.h"
+#include "motion_planner.h"
 
 #endif

@@ -44,7 +44,7 @@ IKSolver::~IKSolver(){
 
 }
 
-bool IKSolver::solveIK(geometry_msgs::Pose& _target_pose){
+bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose){
 	// m_robot_state.setJointGroupPositions(m_jmg, m_relaxed_limits.data());
 	
 	

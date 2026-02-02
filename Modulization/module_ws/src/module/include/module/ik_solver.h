@@ -4,7 +4,11 @@
  *  Created on: January 15, 2026
  *      Author: Issac (RscnDvlJo)
  */
+ 
+#ifndef MODULE_IK_SOLVER_H
+#define MODULE_IK_SOLVER_H
 
+#pragma once
 
 #include "config.h"
 #include "robot_context.h"
@@ -52,6 +56,8 @@ class IKSolver{
 		IKSolver(IKConfig&, RobotContext&, StateHandler&, const moveit::core::GroupStateValidityCallbackFn&);
 		~IKSolver();
 
-		bool solveIK(geometry_msgs::Pose&);
+		bool solveIK(const geometry_msgs::Pose&);
 
 };
+
+#endif

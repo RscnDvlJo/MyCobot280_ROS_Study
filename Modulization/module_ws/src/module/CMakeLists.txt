@@ -156,6 +156,8 @@ add_library(main_lib
 	src/state_publisher.cpp
 	src/trajectory_manager.cpp
 	src/path_planner.cpp
+	src/motion_planner.cpp
+	
 )
 
 add_dependencies(main_lib

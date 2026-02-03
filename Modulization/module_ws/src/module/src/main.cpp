@@ -45,36 +45,28 @@
 	
 	PathPlanner pathplan(*config.pathPlannerConfig());
 
-	TrajectoryManager tjmanage;
-	tjmanage.setPath(pathplan.genPathNPose());
+	TrajectoryManager tjmanager;
+	tjmanager.setPath(pathplan.genPathNPose());
 
 
-	MotionPlanner motionplan(tjmanage, ikSolver, stthdl, rbcontext);
-	tjmanage.setJointPath(motionplan.genJointPath());
+	MotionPlanner motionplan(tjmanager, ikSolver, stthdl, rbcontext);
+	tjmanager.setJointPath(motionplan.genJointPath());
 
+	TrajectoryPublisher traj_pub(
+		nh,
+		rbcontext.robot_model->getModelFrame()
+	);
 
+	MotionExecutor executor(
+		rbcontext.mgi, 
+		tjmanager,         
+		traj_pub           
+	);
+	
+	traj_pub.waitForNext("initial wait");
+	
+	executor.executeMotion();   
 
-	// path planner
-	// motion planner (statehandler, ik_solver)
-	
-	// joint_value_cur 계산이 성공한 경우 sttpub.updateJointState(stthdl, rail_pos)
-	
-	
-	/*
-	ros::Publisher joint_pub = nh.advertise<sensor_msgs::JointState>("joint_states", 10);
-	ros::Publisher disp_pub = nh.advertise<moveit_msgs::DisplayTrajectory>("move_group/display_planned_path", 1, true);
-	
-	
-	Config config;
-	RobotContext RbContext(config.basicConfig()->group_name);
-	
-	PathPlanner pathPlanner(0.112, 0.350, 0, 0.150, 0.010, *config.pathPlannerConfig());
-	
-	// 1. do path plan & generate pose
-	pathPlanner.genPathNPose();
-	std::vector<geometry_msgs::Pose> waypoints = pathPlanner.makeWaypoints();
-	*/
-	
 	
 	ros::waitForShutdown();
 }

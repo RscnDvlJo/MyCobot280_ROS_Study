@@ -45,6 +45,11 @@ const geometry_msgs::Pose& TrajectoryManager::current() const{
 	return m_pathData.waypoints.at(m_current_idx);
 }
 
+const JointTrajectoryData& TrajectoryManager::jointPath() const
+{
+	return m_jointPath;
+}
+
 void TrajectoryManager::advance(){
 	if (hasNext()) {
 		++m_current_idx;

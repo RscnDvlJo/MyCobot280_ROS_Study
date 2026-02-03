@@ -13,10 +13,11 @@
 #include "config.h"
 #include "path_planner.h"
 #include "ik_solver.h"
-#include "path_planner.h"
 #include "state_handler.h"
 #include "state_publisher.h"
 #include "trajectory_manager.h"
 #include "motion_planner.h"
+#include "trajectory_publisher.h"
+#include "motion_executor.h"
 
 #endif

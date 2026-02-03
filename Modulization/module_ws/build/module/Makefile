@@ -1673,6 +1673,33 @@ src/main.cpp.s:
 	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/module.dir/build.make module/CMakeFiles/module.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/motion_executor.o: src/motion_executor.cpp.o
+
+.PHONY : src/motion_executor.o
+
+# target to build an object file
+src/motion_executor.cpp.o:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_executor.cpp.o
+.PHONY : src/motion_executor.cpp.o
+
+src/motion_executor.i: src/motion_executor.cpp.i
+
+.PHONY : src/motion_executor.i
+
+# target to preprocess a source file
+src/motion_executor.cpp.i:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_executor.cpp.i
+.PHONY : src/motion_executor.cpp.i
+
+src/motion_executor.s: src/motion_executor.cpp.s
+
+.PHONY : src/motion_executor.s
+
+# target to generate assembly for a file
+src/motion_executor.cpp.s:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_executor.cpp.s
+.PHONY : src/motion_executor.cpp.s
+
 src/motion_planner.o: src/motion_planner.cpp.o
 
 .PHONY : src/motion_planner.o
@@ -1835,6 +1862,33 @@ src/trajectory_manager.cpp.s:
 	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/trajectory_manager.cpp.s
 .PHONY : src/trajectory_manager.cpp.s
 
+src/trajectory_publisher.o: src/trajectory_publisher.cpp.o
+
+.PHONY : src/trajectory_publisher.o
+
+# target to build an object file
+src/trajectory_publisher.cpp.o:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/trajectory_publisher.cpp.o
+.PHONY : src/trajectory_publisher.cpp.o
+
+src/trajectory_publisher.i: src/trajectory_publisher.cpp.i
+
+.PHONY : src/trajectory_publisher.i
+
+# target to preprocess a source file
+src/trajectory_publisher.cpp.i:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/trajectory_publisher.cpp.i
+.PHONY : src/trajectory_publisher.cpp.i
+
+src/trajectory_publisher.s: src/trajectory_publisher.cpp.s
+
+.PHONY : src/trajectory_publisher.s
+
+# target to generate assembly for a file
+src/trajectory_publisher.cpp.s:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/trajectory_publisher.cpp.s
+.PHONY : src/trajectory_publisher.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1952,6 +2006,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/motion_executor.o"
+	@echo "... src/motion_executor.i"
+	@echo "... src/motion_executor.s"
 	@echo "... src/motion_planner.o"
 	@echo "... src/motion_planner.i"
 	@echo "... src/motion_planner.s"
@@ -1970,6 +2027,9 @@ help:
 	@echo "... src/trajectory_manager.o"
 	@echo "... src/trajectory_manager.i"
 	@echo "... src/trajectory_manager.s"
+	@echo "... src/trajectory_publisher.o"
+	@echo "... src/trajectory_publisher.i"
+	@echo "... src/trajectory_publisher.s"
 .PHONY : help
 
 

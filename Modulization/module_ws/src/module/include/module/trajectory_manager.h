@@ -49,7 +49,7 @@ class TrajectoryManager{
 
 		
 		const geometry_msgs::Pose& current() const;
-
+		const JointTrajectoryData& jointPath() const;
 		
 		bool hasNext() const;
 		void advance();

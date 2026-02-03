@@ -1,0 +1,53 @@
+/*
+ * motion_executor.cpp
+ *
+ *  Created on: Febraury 03, 2026
+ *      Author: Issac (RscnDvlJo)
+ */
+
+
+#include "module/motion_executor.h"
+
+MotionExecutor::MotionExecutor(moveit::planning_interface::MoveGroupInterface& _mgi, TrajectoryManager& _tjmanager, TrajectoryPublisher& _tjpublish)
+: m_mgi(_mgi), m_tjmanager(_tjmanager), m_tjpublish(_tjpublish)
+{
+
+}
+
+MotionExecutor::~MotionExecutor(){
+
+}
+
+void MotionExecutor::executeMotion(){
+
+	const auto& _path = m_tjmanager.jointPath();
+
+	if (_path.size() < 2) return;
+
+	for (size_t i = 0; i + 1 < _path.size(); ++i) {
+
+		moveit::core::RobotState start_state(m_mgi.getRobotModel());
+
+		start_state.setJointGroupPositions(
+		    m_mgi.getCurrentState()->getJointModelGroup(m_mgi.getName()),
+		    _path[i]);
+		m_mgi.setStartState(start_state);
+
+
+		const auto& _q_goal  = _path[i + 1];
+		m_mgi.setJointValueTarget(_q_goal);
+
+		moveit::planning_interface::MoveGroupInterface::Plan _plan;
+		bool _success = (m_mgi.plan(_plan) ==
+				moveit::planning_interface::MoveItErrorCode::SUCCESS);
+
+		if (!_success) {
+			ROS_WARN_STREAM("[MotionExecutor] Plan failed at segment " << i);
+			continue;
+		}
+
+		m_tjpublish.publish(_plan.trajectory_);
+
+		m_tjpublish.waitForNext("Segment " + std::to_string(i) + " → " + std::to_string(i + 1));
+	}
+}

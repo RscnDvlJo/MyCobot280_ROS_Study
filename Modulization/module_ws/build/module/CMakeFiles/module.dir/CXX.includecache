@@ -39,8 +39,6 @@ path_planner.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/path_planner.h
 ik_solver.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/ik_solver.h
-path_planner.h
-/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/path_planner.h
 state_handler.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler.h
 state_publisher.h
@@ -49,6 +47,22 @@ trajectory_manager.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_manager.h
 motion_planner.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_planner.h
+trajectory_publisher.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_publisher.h
+motion_executor.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_executor.h
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_executor.h
+vector
+-
+moveit/move_group_interface/move_group_interface.h
+-
+moveit_msgs/RobotTrajectory.h
+-
+module/trajectory_manager.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/module/trajectory_manager.h
+module/trajectory_publisher.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/module/trajectory_publisher.h
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_planner.h
 trajectory_manager.h
@@ -120,6 +134,18 @@ vector
 utility
 -
 cstddef
+-
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_publisher.h
+ros/ros.h
+-
+moveit_msgs/DisplayTrajectory.h
+-
+moveit_msgs/RobotTrajectory.h
+-
+moveit_visual_tools/moveit_visual_tools.h
+-
+string
 -
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/main.cpp

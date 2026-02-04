@@ -1700,6 +1700,33 @@ src/motion_executor.cpp.s:
 	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_executor.cpp.s
 .PHONY : src/motion_executor.cpp.s
 
+src/motion_optimizer.o: src/motion_optimizer.cpp.o
+
+.PHONY : src/motion_optimizer.o
+
+# target to build an object file
+src/motion_optimizer.cpp.o:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.o
+.PHONY : src/motion_optimizer.cpp.o
+
+src/motion_optimizer.i: src/motion_optimizer.cpp.i
+
+.PHONY : src/motion_optimizer.i
+
+# target to preprocess a source file
+src/motion_optimizer.cpp.i:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.i
+.PHONY : src/motion_optimizer.cpp.i
+
+src/motion_optimizer.s: src/motion_optimizer.cpp.s
+
+.PHONY : src/motion_optimizer.s
+
+# target to generate assembly for a file
+src/motion_optimizer.cpp.s:
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build && $(MAKE) -f module/CMakeFiles/main_lib.dir/build.make module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.s
+.PHONY : src/motion_optimizer.cpp.s
+
 src/motion_planner.o: src/motion_planner.cpp.o
 
 .PHONY : src/motion_planner.o
@@ -2009,6 +2036,9 @@ help:
 	@echo "... src/motion_executor.o"
 	@echo "... src/motion_executor.i"
 	@echo "... src/motion_executor.s"
+	@echo "... src/motion_optimizer.o"
+	@echo "... src/motion_optimizer.i"
+	@echo "... src/motion_optimizer.s"
 	@echo "... src/motion_planner.o"
 	@echo "... src/motion_planner.i"
 	@echo "... src/motion_planner.s"

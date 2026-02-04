@@ -12,7 +12,8 @@ Config::Config(){
 
 	m_basicConfig.group_name_only_robot = "arm";
 	m_basicConfig.group_name_robot_with_rail = "arm_with_rail";
-	
+	m_basicConfig.linear_rail_joint_name = "linear_slide";
+
 	m_pathPlannerConfig.pos_tol = 0.001;
 	m_pathPlannerConfig.rot_tol = 0.01;
 	m_pathPlannerConfig.allowed_time = 2.0;

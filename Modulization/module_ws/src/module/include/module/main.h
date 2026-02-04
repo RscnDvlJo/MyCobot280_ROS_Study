@@ -19,5 +19,6 @@
 #include "motion_planner.h"
 #include "trajectory_publisher.h"
 #include "motion_executor.h"
+#include "motion_optimizer.h"
 
 #endif

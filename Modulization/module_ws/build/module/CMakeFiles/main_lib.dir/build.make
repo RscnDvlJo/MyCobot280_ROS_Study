@@ -187,6 +187,19 @@ module/CMakeFiles/main_lib.dir/src/motion_executor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main_lib.dir/src/motion_executor.cpp.s"
 	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/module && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/motion_executor.cpp -o CMakeFiles/main_lib.dir/src/motion_executor.cpp.s
 
+module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.o: module/CMakeFiles/main_lib.dir/flags.make
+module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.o: /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/motion_optimizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.o"
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/module && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.o -c /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/motion_optimizer.cpp
+
+module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.i"
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/module && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/motion_optimizer.cpp > CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.i
+
+module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.s"
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/module && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/src/motion_optimizer.cpp -o CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.s
+
 # Object files for target main_lib
 main_lib_OBJECTS = \
 "CMakeFiles/main_lib.dir/src/robot_context.cpp.o" \
@@ -198,7 +211,8 @@ main_lib_OBJECTS = \
 "CMakeFiles/main_lib.dir/src/trajectory_manager.cpp.o" \
 "CMakeFiles/main_lib.dir/src/motion_planner.cpp.o" \
 "CMakeFiles/main_lib.dir/src/trajectory_publisher.cpp.o" \
-"CMakeFiles/main_lib.dir/src/motion_executor.cpp.o"
+"CMakeFiles/main_lib.dir/src/motion_executor.cpp.o" \
+"CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.o"
 
 # External object files for target main_lib
 main_lib_EXTERNAL_OBJECTS =
@@ -213,6 +227,7 @@ main_lib_EXTERNAL_OBJECTS =
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: module/CMakeFiles/main_lib.dir/src/motion_planner.cpp.o
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: module/CMakeFiles/main_lib.dir/src/trajectory_publisher.cpp.o
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: module/CMakeFiles/main_lib.dir/src/motion_executor.cpp.o
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: module/CMakeFiles/main_lib.dir/src/motion_optimizer.cpp.o
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: module/CMakeFiles/main_lib.dir/build.make
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: /opt/ros/noetic/lib/libmoveit_common_planning_interface_objects.so
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: /opt/ros/noetic/lib/libmoveit_planning_scene_interface.so
@@ -320,7 +335,7 @@ main_lib_EXTERNAL_OBJECTS =
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so: module/CMakeFiles/main_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX shared library /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX shared library /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/devel/lib/libmain_lib.so"
 	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/build/module && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

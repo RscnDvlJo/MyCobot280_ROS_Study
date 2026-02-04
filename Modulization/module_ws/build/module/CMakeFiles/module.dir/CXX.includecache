@@ -51,6 +51,8 @@ trajectory_publisher.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_publisher.h
 motion_executor.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_executor.h
+motion_optimizer.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_optimizer.h
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_executor.h
 vector
@@ -63,6 +65,30 @@ module/trajectory_manager.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/module/trajectory_manager.h
 module/trajectory_publisher.h
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/module/trajectory_publisher.h
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_optimizer.h
+moveit/robot_model/robot_model.h
+-
+moveit/robot_state/robot_state.h
+-
+Eigen/Core
+-
+Eigen/Dense
+-
+ros/ros.h
+-
+limits
+-
+ik_solver.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/ik_solver.h
+trajectory_manager.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/trajectory_manager.h
+robot_context.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/robot_context.h
+config.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/config.h
+state_handler.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/state_handler.h
 
 /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Modulization/module_ws/src/module/include/module/motion_planner.h
 trajectory_manager.h

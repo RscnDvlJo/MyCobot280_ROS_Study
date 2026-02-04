@@ -56,7 +56,7 @@ class IKSolver{
 		IKSolver(IKConfig&, RobotContext&, StateHandler&, const moveit::core::GroupStateValidityCallbackFn&);
 		~IKSolver();
 
-		bool solveIK(const geometry_msgs::Pose&);
+		bool solveIK(const geometry_msgs::Pose&, moveit::core::RobotState&, const std::vector<double>&);
 
 };
 

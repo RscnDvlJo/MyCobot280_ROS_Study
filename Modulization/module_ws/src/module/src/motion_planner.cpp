@@ -44,28 +44,28 @@ std::vector<std::vector<double>> MotionPlanner::genJointPath(){
 	while(1){
 
 
-	if(!m_ikSolver.solveIK(m_tjmanager.current())){
-		/* if solveIK successed, current_robot_state in StateHandler will be updated 
-		joint values must be stored in this function using updated current_robot_state
-		*/
+		if(!m_ikSolver.solveIK(m_tjmanager.current(), m_stthdl.candidateRobotState(), m_stthdl.prevJointState())){
+			/* if solveIK successed, current_robot_state in StateHandler will be updated 
+			joint values must be stored in this function using updated current_robot_state
+			*/
 
-		/* if solveIK failed, ROS Warning is automatically occured in IKSolver class */
-		ROS_WARN("IK failed at waypoint %zu", m_tjmanager.index());
-		m_stthdl.resetCandidate();
+			/* if solveIK failed, ROS Warning is automatically occured in IKSolver class */
+			ROS_WARN("IK failed at waypoint %zu", m_tjmanager.index());
+			m_stthdl.resetCandidate();
 
-		break;
+			break;
 
-	}
-	
-	m_stthdl.setCandidateFromRobotState(m_rbctxt.jmg_only_robot);   // joint_state_candidate is parsed from robot_state_candidate
-	m_stthdl.commitCandidate();                              // joint_state_current is parsed from joint_state_candidate
-	m_stthdl.snapshotCurrentJoints();                        // joint_state_pre is parsed from joint_state_cur
+		}
+		
+		m_stthdl.setCandidateFromRobotState(m_rbctxt.jmg_only_robot);   // joint_state_candidate is parsed from robot_state_candidate
+		m_stthdl.commitCandidate();                              // joint_state_current is parsed from joint_state_candidate
+		m_stthdl.snapshotCurrentJoints();                        // joint_state_pre is parsed from joint_state_cur
 
-	_joint_path.push_back(m_stthdl.currentJointState());
+		_joint_path.push_back(m_stthdl.currentJointState());
 
 
-	if(m_tjmanager.hasNext())   m_tjmanager.advance();
-	else   break;
+		if(m_tjmanager.hasNext())   m_tjmanager.advance();
+		else   break;
 
 	}
 

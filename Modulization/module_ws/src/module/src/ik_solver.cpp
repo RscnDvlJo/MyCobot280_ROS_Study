@@ -44,7 +44,7 @@ IKSolver::~IKSolver(){
 
 }
 
-bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose){
+bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::RobotState& _robot_state, const std::vector<double>& _seed){
 	// m_robot_state.setJointGroupPositions(m_jmg, m_relaxed_limits.data());
 	
 	
@@ -52,7 +52,14 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose){
 	tf2::fromMsg(_target_pose, _target_eig);
     
     
-	m_robot_state.setJointGroupPositions(m_jmg, m_stateHandler.prevJointState());
+	// m_robot_state.setJointGroupPositions(m_jmg, m_stateHandler.prevJointState());
+
+	std::vector<double> joint_vals;
+	_robot_state.copyJointGroupPositions(m_jmg, joint_vals);
+
+	m_robot_state.setJointGroupPositions(m_jmg, joint_vals);
+
+
 
 	const auto* _model = m_robot_state.getRobotModel().get();
 	const auto& _var_names = m_jmg->getVariableNames();
@@ -119,7 +126,9 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose){
 	m_stateHandler.setCandidateFromRobotState(m_jmg);
 
 	auto& _cand = m_stateHandler.candidateJointState();
-	const auto& _prev = m_stateHandler.prevJointState();
+	
+	const auto& _prev = _seed;
+	// const auto& _prev = m_stateHandler.prevJointState();
 	    
 	    
 	// remapping solution near to previous solution

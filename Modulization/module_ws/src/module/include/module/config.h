@@ -22,7 +22,8 @@
 struct BasicConfig{
 	std::string group_name_only_robot;
 	std::string group_name_robot_with_rail;
-
+	std::string linear_rail_joint_name;
+	
 };
 
 

@@ -22,11 +22,9 @@ double MotionOptimizer::evaluateJCondNum(double _rail_pos)
 	double _cost = 0.0;
 	
 	m_robot_state.setVariablePosition(m_rail_joint_name, _rail_pos);
-	m_robot_state.update();
-
-	m_tjmanager.reset();
-
-	std::vector<double> _seed = m_stthdl.currentJointState();
+	
+	std::vector<double> _seed;
+	m_ikSolver.makeReadyStateSeed(m_robot_state, _seed);   // jmg is automatically setted as jmg_only_robot
 
 	while (m_tjmanager.hasNext()) {
 
@@ -40,7 +38,6 @@ double MotionOptimizer::evaluateJCondNum(double _rail_pos)
 			continue;
 		}
 		else {
-
 			m_robot_state.copyJointGroupPositions(m_rbctxt.jmg_only_robot, _seed);
 
 			// Jacobian 계산

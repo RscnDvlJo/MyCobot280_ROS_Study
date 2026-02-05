@@ -7,8 +7,8 @@
 	<arg name="baud" default="115200" />
 
  
-	<include file="$(find cobotrail)/launch/robot_description.launch"/>
-	<include file="$(find cobotrail)/launch/object_description.launch"/>
+	<include file="$(find module)/launch/robot_description.launch"/>
+	<include file="$(find module)/launch/object_description.launch"/>
 
  
 	<!-- for fake control & moveit -->
@@ -41,28 +41,28 @@
 
 
 	<!-- main source code-->
-	<node name="scan_control" pkg="cobotrail" type="scan_control" output="screen"/>
-
-
+	<node name="module" pkg="module" type="module" output="screen"/>
 	<!-- for real robot control-->
-	<node name="control_slider" pkg="cobotrail" type="slider_control.py"> 
+	<!--
+
+	<node name="control_slider" pkg="module" type="slider_control.py"> 
 		<param name="port" type="string" value="$(arg port)" />
 		<param name="baud" type="int" value="$(arg baud)" />
 	</node>
-
+	-->
  
    
 	<!-- after get rviz.config-->
 
 	
-	<arg name="rvizconfig" default="$(find cobotrail)/rviz/config.rviz" />
+	<arg name="rvizconfig" default="$(find module)/rviz/config.rviz" />
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
 	
-
 	<!-- before get rviz.config-->
 	
 	<!--
 	<node name="rviz" pkg="rviz" type="rviz" />
 	-->
+
   
 </launch>

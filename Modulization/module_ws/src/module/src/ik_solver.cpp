@@ -27,22 +27,30 @@ m_iKConfig(_iKConfig), m_robotContext(_robotContext), m_stateHandler(_stateHandl
 	m_attempts_strict = m_iKConfig.attempts_strict;
 	m_attempts_retry = m_iKConfig.attempts_retry;
 	
-
-	// m_robot_state = m_robotContext.robot_state;
-	// m_stateHandler.robot_state_candidate;
-	// m_jmg = m_robotContext.jmg_only_robot;
-
-	
-	
-	// m_validity_cb = nullptr;
-
-
-	m_tip_link = m_robotContext.mgi.getEndEffectorLink();
+	m_tip_link = (m_robotContext.jmg_only_robot)->getLinkModelNames().back();
 }
+
 
 IKSolver::~IKSolver(){
 
 }
+
+void IKSolver::makeReadyStateSeed(moveit::core::RobotState& _robot_state, std::vector<double>& _seed){
+
+	_robot_state.setToDefaultValues(m_jmg, "ready");
+	_robot_state.copyJointGroupPositions(m_jmg, _seed);
+
+}
+
+void IKSolver::makeCurrentStateSeed(moveit::core::RobotState& _robot_state, std::vector<double>& _seed){
+   
+	_robot_state.copyJointGroupPositions(m_jmg, _seed);
+	m_robot_state.setJointGroupPositions(m_jmg, _seed);
+
+}
+
+
+
 
 bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::RobotState& _robot_state, const std::vector<double>& _seed){
 	// m_robot_state.setJointGroupPositions(m_jmg, m_relaxed_limits.data());

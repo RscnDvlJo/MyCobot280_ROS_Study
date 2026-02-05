@@ -38,11 +38,20 @@ size_t TrajectoryManager::index() const{
 }
 
 bool TrajectoryManager::hasNext() const{
-	return m_current_idx < m_pathData.waypoints.size();
+
+	return (m_current_idx + 1) < m_pathData.waypoints.size();
+	// return m_current_idx < m_pathData.waypoints.size();
 }
 
 const geometry_msgs::Pose& TrajectoryManager::current() const{
-	return m_pathData.waypoints.at(m_current_idx);
+	if (m_current_idx >= m_pathData.waypoints.size()) {
+		throw std::out_of_range(
+		"TrajectoryManager::current() index out of range");
+	}
+	return m_pathData.waypoints[m_current_idx];
+
+
+	// return m_pathData.waypoints.at(m_current_idx);
 }
 
 const JointTrajectoryData& TrajectoryManager::jointPath() const

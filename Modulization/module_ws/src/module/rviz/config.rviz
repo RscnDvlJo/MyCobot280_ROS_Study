@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Grid1
+        - /RobotModel1
         - /RobotModel2
       Splitter Ratio: 0.5
     Tree Height: 478
@@ -135,7 +135,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        g_base:
+        world:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -173,7 +173,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.1567115783691406
+      Distance: 3.912738561630249
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -189,9 +189,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3853980600833893
+      Pitch: 0.3653981387615204
       Target Frame: <Fixed Frame>
-      Yaw: 0.7753979563713074
+      Yaw: 1.2303978204727173
     Saved: ~
 Window Geometry:
   Displays:
@@ -211,5 +211,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 180
-  Y: 27
+  X: 503
+  Y: 70

@@ -9,33 +9,46 @@
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
-    <group name="arm">
-        <joint name="g_base_to_joint1"/>
-        <joint name="joint2_to_joint1"/>
-        <joint name="joint3_to_joint2"/>
-        <joint name="joint4_to_joint3"/>
-        <joint name="joint5_to_joint4"/>
-        <joint name="joint6_to_joint5"/>
-        <joint name="joint6output_to_joint6"/>
-    </group>
-    <group name="arm_with_rail">
-        <joint name="linear_slide"/>
-        <joint name="g_base_to_joint1"/>
-        <joint name="joint2_to_joint1"/>
-        <joint name="joint3_to_joint2"/>
-        <joint name="joint4_to_joint3"/>
-        <joint name="joint5_to_joint4"/>
-        <joint name="joint6_to_joint5"/>
-        <joint name="joint6output_to_joint6"/>
-    </group>
-    <group name="e_hand">
-        <joint name="joint6output_to_joint6"/>
-    </group>
-    <group name="rail">
-        <joint name="linear_slide"/>
-    </group>
+	<group name="arm">
+		<chain base_link="g_base" tip_link="joint6_flange"/>
+	</group>
+	<group name="arm_with_rail">
+		<chain base_link="linear_rail" tip_link="joint6_flange"/>
+	</group>
+	
+	<group name="e_hand">
+		<joint name="joint6output_to_joint6"/>
+	</group>
+
+	<group name="rail">
+		<joint name="linear_slide"/>
+	</group>
+    
+	<group_state name="home" group="arm">
+		<joint name="joint2_to_joint1" value="0.0"/>
+		<joint name="joint3_to_joint2" value="0.0"/>
+		<joint name="joint4_to_joint3" value="0.0"/>
+		<joint name="joint5_to_joint4" value="0.0"/>
+		<joint name="joint6_to_joint5" value="0.0"/>
+		<joint name="joint6output_to_joint6" value="0.0"/>
+	</group_state>
+
+	<group_state name="ready" group="arm">
+		<joint name="joint2_to_joint1" value="0.0"/>
+		<joint name="joint3_to_joint2" value="-0.25"/>
+		<joint name="joint4_to_joint3" value="0.15"/>
+		<joint name="joint5_to_joint4" value="0.0"/>
+		<joint name="joint6_to_joint5" value="0.0"/>
+		<joint name="joint6output_to_joint6" value="0.0"/>
+	</group_state>
+    
+    
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="hand" parent_link="world" group="e_hand"/>
+	<end_effector
+	    name="hand"
+	    parent_link="joint6_flange"
+	    group="e_hand"/>
+
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_joint" type="fixed" parent_frame="world" child_link="linear_rail"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

@@ -21,26 +21,11 @@ std::vector<std::vector<double>> MotionPlanner::genJointPath(){
 
 	std::vector<std::vector<double>> _joint_path;
 
-	moveit::core::RobotState& _robot_state = m_stthdl.currentRobotState(); 
-	bool ok = _robot_state.setFromIK(m_rbctxt.jmg_only_robot, m_tjmanager.current(), 0.2);
-
-	if (!ok) {
-		ROS_ERROR("IK failed at waypoint 0");
-		return {};
-	}
-
-	_robot_state.copyJointGroupPositions(m_rbctxt.jmg_only_robot, m_stthdl.prevJointState());   // first seed is generated
-	m_tjmanager.advance();                                                      // index upcount in waypoints
-
-	std::string _tip_link = (m_rbctxt.mgi).getEndEffectorLink();
-
-	// if there is no tip link, use last link as tip
-	if (_tip_link.empty()) {
-		const auto& _links = (m_rbctxt.jmg_only_robot)->getLinkModelNames();
-		_tip_link = _links.empty() ? "" : _links.back();
-	}
-
-
+	std::vector<double> _seed;
+	m_ikSolver.makeReadyStateSeed(m_stthdl.candidateRobotState(), _seed);
+	m_stthdl.prevJointState() = _seed;
+	   
+	
 	while(1){
 
 

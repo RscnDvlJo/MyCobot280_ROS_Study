@@ -31,6 +31,7 @@ class MotionExecutor{
 			   TrajectoryPublisher&);
 		~MotionExecutor();
 
+		void goToReadyPose();
 		void executeMotion();
 };
 #endif

@@ -8,8 +8,8 @@
 
 #include "module/motion_executor.h"
 
-MotionExecutor::MotionExecutor(moveit::planning_interface::MoveGroupInterface& _mgi, TrajectoryManager& _tjmanager, TrajectoryPublisher& _tjpublish)
-: m_mgi(_mgi), m_tjmanager(_tjmanager), m_tjpublish(_tjpublish)
+MotionExecutor::MotionExecutor(moveit::planning_interface::MoveGroupInterface& _mgi, TrajectoryManager& _tjmanager, TrajectoryPublisher& _tjpublish, RobotContext& _rbctxt, StateHandler& _stthdl, StatePublisher& _sttpub)
+: m_mgi(_mgi), m_tjmanager(_tjmanager), m_tjpublish(_tjpublish), m_rbctxt(_rbctxt), m_stthdl(_stthdl), m_sttpub(_sttpub)
 {
 
 }
@@ -45,7 +45,18 @@ void MotionExecutor::goToReadyPose(){
 	m_tjpublish.waitForNext("Go to READY pose");
 
 	
-	m_mgi.execute(_plan);
+	// m_sttpub.disable();
+	auto _result = m_mgi.execute(_plan);
+	if (_result != moveit::planning_interface::MoveItErrorCode::SUCCESS) {
+		ROS_ERROR("Execution failed");
+		return;
+	}
+	// ros::Duration(2.0).sleep();   
+
+
+	commitCurrentStateFromMoveIt(_plan.trajectory_);
+	
+	// m_sttpub.enable();
 
 
 }
@@ -56,51 +67,56 @@ void MotionExecutor::executeMotion(){
 
 	if (_path.size() < 2) return;
 
-
-	// m_mgi.setStartStateToCurrentState();
-    const auto* jmg =
-        m_mgi.getCurrentState()->getJointModelGroup(m_mgi.getName());
-
 	moveit::core::RobotState current_state(*m_mgi.getCurrentState());
-	
+
 	for (size_t i = 0; i + 1 < _path.size(); ++i) {
 
-		// moveit::core::RobotState start_state(m_mgi.getRobotModel());
 		m_mgi.setStartStateToCurrentState();
 		m_mgi.setJointValueTarget(_path[i + 1]);
-		
 
-		/* 
-		start_state.setJointGroupPositions(
-		    m_mgi.getCurrentState()->getJointModelGroup(m_mgi.getName()),
-		    _path[i]);
-		m_mgi.setStartState(start_state);
-		*/
-		/*
-		const auto& _q_goal  = _path[i + 1];
-		m_mgi.setJointValueTarget(_q_goal);
-		*/
-		
+
 		moveit::planning_interface::MoveGroupInterface::Plan _plan;
 		bool _success = (m_mgi.plan(_plan) ==
-				moveit::planning_interface::MoveItErrorCode::SUCCESS);
+		moveit::planning_interface::MoveItErrorCode::SUCCESS);
 
 		if (!_success) {
 			ROS_WARN_STREAM("[MotionExecutor] Plan failed at segment " << i);
 			continue;
 		}
 
+
 		m_tjpublish.publish(_plan.trajectory_);
 
 		m_tjpublish.waitForNext("Segment " + std::to_string(i) + " → " + std::to_string(i + 1));
-		
-		m_mgi.execute(_plan);
-		moveit::core::RobotState new_state(*m_mgi.getCurrentState());
-		new_state.setJointGroupPositions(jmg, _path[i + 1]);
-		m_mgi.setStartState(new_state);
 
+		// m_sttpub.disable();
 
+		auto _result = m_mgi.execute(_plan);
+		if (_result != moveit::planning_interface::MoveItErrorCode::SUCCESS) {
+			ROS_ERROR("Execution failed");
+			return;
+		}
 
-		
+		commitCurrentStateFromMoveIt(_plan.trajectory_);
+
+		// m_sttpub.enable();
 	}
+}
+
+void MotionExecutor::commitCurrentStateFromMoveIt(const moveit_msgs::RobotTrajectory& traj)
+{
+	/*
+	auto rs = m_mgi.getCurrentState();
+	std::vector<double> q;
+	rs->copyJointGroupPositions(m_rbctxt.jmg_only_robot, q);
+	m_stthdl.setCurrentJointState(q);
+	*/
+	
+	const auto& jt = traj.joint_trajectory;
+	if (jt.points.empty()) return;
+
+	const auto& last = jt.points.back();
+	m_stthdl.setCurrentJointState(last.positions);
+
+	
 }

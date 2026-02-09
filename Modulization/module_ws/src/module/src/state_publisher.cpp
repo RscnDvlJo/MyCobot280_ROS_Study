@@ -33,7 +33,7 @@ void StatePublisher::publishJointState(double _rail_pos){
 
 	_js.position[6] = _rail_pos;
 
-	auto& _arm = m_stthdl.currentJointState();
+	auto _arm = m_stthdl.getCurrentJointState();
 	for (size_t i = 0; i < _arm.size(); ++i)
 		_js.position[i + 1] = _arm[i];
 
@@ -46,7 +46,7 @@ void StatePublisher::updateJointState(double _rail_pos){
 }
 
 void StatePublisher::timerCallback(const ros::TimerEvent&){
-	// if (!m_stthdl) return;
+	 if(!_enable) return;
 
 	sensor_msgs::JointState _js;
 	_js.header.stamp = ros::Time::now();
@@ -55,12 +55,11 @@ void StatePublisher::timerCallback(const ros::TimerEvent&){
 
 	_js.position[6] = m_rail_pos;
 
-	auto& arm = m_stthdl.currentJointState();
-	for (size_t i = 0; i < arm.size(); ++i)
-		_js.position[i + 1] = arm[i];
+	auto _arm = m_stthdl.getCurrentJointState();
+	for (size_t i = 0; i < _arm.size(); ++i)
+		_js.position[i + 1] = _arm[i];
 
 	m_joint_pub.publish(_js);
 
 }
-
 

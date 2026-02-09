@@ -7,8 +7,8 @@
 
 #include "module/trajectory_publisher.h"
 
-TrajectoryPublisher::TrajectoryPublisher(ros::NodeHandle& _nh, const std::string& _base_frame)
-: m_visual_tools(_base_frame)
+TrajectoryPublisher::TrajectoryPublisher(ros::NodeHandle& _nh, const std::string& _base_frame, StateHandler& _stthdl)
+: m_visual_tools(_base_frame), m_stthdl(_stthdl)
 {
 	m_display_pub = _nh.advertise<moveit_msgs::DisplayTrajectory>("/display_planned_path", 1, true);
 
@@ -33,6 +33,8 @@ void TrajectoryPublisher::publish(const moveit_msgs::RobotTrajectory& _traj)
 	_display_msg.trajectory.clear();
 	_display_msg.trajectory.push_back(_traj);
 
+	// moveit::core::robotStateToRobotStateMsg(*m_visual_tools.getCurrentState(), _display_msg.trajectory_start);      // it is neccesary to define start state of trajectory
+	moveit::core::robotStateToRobotStateMsg(m_stthdl.currentRobotState(), _display_msg.trajectory_start);
 	m_display_pub.publish(_display_msg);
 
 	ROS_INFO("[TrajectoryPublisher] DisplayTrajectory published");

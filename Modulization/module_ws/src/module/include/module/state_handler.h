@@ -13,7 +13,7 @@
 
 #include <moveit/robot_state/robot_state.h>  
 #include <moveit/robot_model/robot_model.h>   
-
+#include <mutex>
 
 struct RbState{
 
@@ -44,6 +44,7 @@ class StateHandler{
 	private:
 		RbState m_rbState;
 		JointVals m_joints;
+		std::mutex m_mtx;
 	
 	public:
 	
@@ -67,6 +68,9 @@ class StateHandler{
 		void setCandidateFromRobotState(const moveit::core::JointModelGroup*);
 		
 		int& currentIKCount();
+		
+		std::vector<double> getCurrentJointState();
+      		void setCurrentJointState(const std::vector<double>& _q);
 
 };
 

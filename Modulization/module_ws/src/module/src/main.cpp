@@ -54,13 +54,17 @@
 
 	TrajectoryPublisher traj_pub(
 		nh,
-		rbcontext.robot_model->getModelFrame()
+		rbcontext.robot_model->getModelFrame(),
+		stthdl
 	);
 
 	MotionExecutor executor(
-		rbcontext.mgi, 
-		tjmanager,         
-		traj_pub           
+		rbcontext.mgi,
+		tjmanager,
+		traj_pub,
+		rbcontext,
+		stthdl,
+		sttpub
 	);
 	
 	traj_pub.waitForNext("initial wait");

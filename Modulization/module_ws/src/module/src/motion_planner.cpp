@@ -43,9 +43,11 @@ std::vector<std::vector<double>> MotionPlanner::genJointPath(){
 		}
 		
 		m_stthdl.setCandidateFromRobotState(m_rbctxt.jmg_only_robot);   // joint_state_candidate is parsed from robot_state_candidate
-		m_stthdl.commitCandidate();                              // joint_state_current is parsed from joint_state_candidate
-		m_stthdl.snapshotCurrentJoints();                        // joint_state_pre is parsed from joint_state_cur
-
+		// m_stthdl.commitCandidate();                              // joint_state_current is parsed from joint_state_candidate
+		// m_stthdl.snapshotCurrentJoints();                        // joint_state_pre is parsed from joint_state_cur
+      		m_stthdl.prevJointState() = m_stthdl.candidateJointState();
+      		
+      		
 		_joint_path.push_back(m_stthdl.currentJointState());
 
 

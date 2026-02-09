@@ -14,8 +14,12 @@
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit_msgs/RobotTrajectory.h>
 
-#include "module/trajectory_manager.h"
-#include "module/trajectory_publisher.h"
+#include "trajectory_manager.h"
+#include "trajectory_publisher.h"
+#include "robot_context.h"
+#include "state_handler.h"
+#include "state_publisher.h"
+
 
 class MotionExecutor{
 
@@ -23,12 +27,20 @@ class MotionExecutor{
 		moveit::planning_interface::MoveGroupInterface& m_mgi;
 		TrajectoryManager& m_tjmanager;
 		TrajectoryPublisher& m_tjpublish;
-
+		RobotContext& m_rbctxt;
+		StateHandler& m_stthdl;
+		StatePublisher& m_sttpub;
+		
+		void commitCurrentStateFromMoveIt(const moveit_msgs::RobotTrajectory&);
+		
 	public:
 
 		explicit MotionExecutor(moveit::planning_interface::MoveGroupInterface&,
 			   TrajectoryManager&,
-			   TrajectoryPublisher&);
+			   TrajectoryPublisher&,
+			   RobotContext&,
+			   StateHandler&,
+			   StatePublisher&);
 		~MotionExecutor();
 
 		void goToReadyPose();

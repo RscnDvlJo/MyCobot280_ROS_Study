@@ -70,3 +70,13 @@ void StateHandler::setCandidateFromRobotState(const moveit::core::JointModelGrou
 int& StateHandler::currentIKCount(){
 	return m_rbState.currentIKCount;
 }
+
+void StateHandler::setCurrentJointState(const std::vector<double>& _q) {
+	std::lock_guard<std::mutex> lock(m_mtx);
+	m_joints.joint_state_cur = _q;
+}
+
+std::vector<double> StateHandler::getCurrentJointState() {
+	std::lock_guard<std::mutex> lock(m_mtx);
+	return m_joints.joint_state_cur;
+}

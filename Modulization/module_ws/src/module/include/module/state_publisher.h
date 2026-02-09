@@ -28,6 +28,8 @@ class StatePublisher{
 		StateHandler& m_stthdl;  // observer
 		double m_rail_pos;
 
+		bool _enable{true};
+
 		void timerCallback(const ros::TimerEvent&);
 
 	public:
@@ -37,7 +39,9 @@ class StatePublisher{
 
 		void publishJointState( double);
 		void updateJointState(double);
-
+		
+		void enable(){_enable = true;};
+		void disable(){_enable = false;};
 };
 
 #endif

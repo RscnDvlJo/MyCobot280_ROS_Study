@@ -49,7 +49,11 @@ class TrajectoryManager{
 
 		
 		const geometry_msgs::Pose& current() const;
+		
 		const JointTrajectoryData& jointPath() const;
+		// const PathData& waypointPath() const;
+		const std::vector<geometry_msgs::Pose>& waypointPath() const;
+
 		
 		bool hasNext() const;
 		void advance();

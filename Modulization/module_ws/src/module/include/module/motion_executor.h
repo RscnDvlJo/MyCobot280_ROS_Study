@@ -33,6 +33,8 @@ class MotionExecutor{
 		
 		void commitCurrentStateFromMoveIt(const moveit_msgs::RobotTrajectory&);
 		
+		Eigen::Affine3d getReadyTargetPose(moveit::planning_interface::MoveGroupInterface::Plan);
+		
 	public:
 
 		explicit MotionExecutor(moveit::planning_interface::MoveGroupInterface&,

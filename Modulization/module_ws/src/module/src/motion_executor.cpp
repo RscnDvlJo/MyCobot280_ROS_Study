@@ -20,8 +20,6 @@ MotionExecutor::~MotionExecutor(){
 
 void MotionExecutor::goToReadyPose(){
 	
-	// const std::string& group_name = m_mgi.getName();
-
 	
 	m_mgi.setStartStateToCurrentState();
 
@@ -40,8 +38,9 @@ void MotionExecutor::goToReadyPose(){
 		return;
 	}
 
-	
-	m_tjpublish.publish(_plan.trajectory_);
+
+
+	m_tjpublish.publish(_plan.trajectory_, getReadyTargetPose(_plan));
 	m_tjpublish.waitForNext("Go to READY pose");
 
 	
@@ -64,16 +63,17 @@ void MotionExecutor::goToReadyPose(){
 void MotionExecutor::executeMotion(){
 
 	const auto& _path = m_tjmanager.jointPath();
-
+	const auto& _waypoint_path = m_tjmanager.waypointPath();
+	
+	
 	if (_path.size() < 2) return;
 
-	moveit::core::RobotState current_state(*m_mgi.getCurrentState());
+	// moveit::core::RobotState current_state(*m_mgi.getCurrentState());
 
 	for (size_t i = 0; i + 1 < _path.size(); ++i) {
 
 		m_mgi.setStartStateToCurrentState();
-		m_mgi.setJointValueTarget(_path[i + 1]);
-
+		m_mgi.setJointValueTarget(_path[i]);
 
 		moveit::planning_interface::MoveGroupInterface::Plan _plan;
 		bool _success = (m_mgi.plan(_plan) ==
@@ -84,8 +84,10 @@ void MotionExecutor::executeMotion(){
 			continue;
 		}
 
+		Eigen::Affine3d target_pose;
+		tf2::fromMsg(_waypoint_path[i], target_pose);
 
-		m_tjpublish.publish(_plan.trajectory_);
+		m_tjpublish.publish(_plan.trajectory_, target_pose);
 
 		m_tjpublish.waitForNext("Segment " + std::to_string(i) + " → " + std::to_string(i + 1));
 
@@ -118,5 +120,29 @@ void MotionExecutor::commitCurrentStateFromMoveIt(const moveit_msgs::RobotTrajec
 	const auto& last = jt.points.back();
 	m_stthdl.setCurrentJointState(last.positions);
 
-	
 }
+
+Eigen::Affine3d MotionExecutor::getReadyTargetPose(moveit::planning_interface::MoveGroupInterface::Plan _plan)
+{
+
+	Eigen::Affine3d ready_pose = Eigen::Affine3d::Identity();
+
+	const auto& _traj = _plan.trajectory_.joint_trajectory;
+
+	if (_traj.points.empty()) {
+		ROS_ERROR("[MotionExecutor] Trajectory has no points");
+		return ready_pose;
+	}
+
+	const auto& _last_point = _traj.points.back();
+
+	moveit::core::RobotState state(*m_mgi.getCurrentState());
+
+	state.setJointGroupPositions(m_rbctxt.jmg_only_robot, _last_point.positions);
+
+	const std::string& _ee_link = m_mgi.getEndEffectorLink();
+	ready_pose = state.getGlobalLinkTransform(_ee_link);
+
+	return ready_pose;
+}
+

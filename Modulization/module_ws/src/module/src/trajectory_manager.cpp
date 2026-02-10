@@ -59,6 +59,13 @@ const JointTrajectoryData& TrajectoryManager::jointPath() const
 	return m_jointPath;
 }
 
+const std::vector<geometry_msgs::Pose>&
+TrajectoryManager::waypointPath() const
+{
+    	return m_pathData.waypoints;  
+}
+
+
 void TrajectoryManager::advance(){
 	if (hasNext()) {
 		++m_current_idx;

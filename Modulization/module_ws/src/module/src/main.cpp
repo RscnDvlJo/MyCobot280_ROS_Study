@@ -55,7 +55,8 @@
 	TrajectoryPublisher traj_pub(
 		nh,
 		rbcontext.robot_model->getModelFrame(),
-		stthdl
+		stthdl,
+		rbcontext
 	);
 
 	MotionExecutor executor(

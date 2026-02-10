@@ -55,6 +55,18 @@ std::vector<std::vector<double>> MotionPlanner::genJointPath(){
 		else   break;
 
 	}
+	
+	ROS_INFO("Generated joint path size: %zu", _joint_path.size());
+
+for (size_t i = 0; i < _joint_path.size(); ++i) {
+    std::ostringstream oss;
+    oss << "Waypoint " << i << " joints: ";
+    for (double q : _joint_path[i]) {
+        oss << q << " ";
+    }
+    ROS_INFO_STREAM(oss.str());
+}
+
 
 	m_tjmanager.reset();
 	return _joint_path;

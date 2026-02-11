@@ -48,7 +48,7 @@ std::vector<std::vector<double>> MotionPlanner::genJointPath(){
       		m_stthdl.prevJointState() = m_stthdl.candidateJointState();
       		
       		
-		_joint_path.push_back(m_stthdl.currentJointState());
+		_joint_path.push_back(m_stthdl.candidateJointState());
 
 
 		if(m_tjmanager.hasNext())   m_tjmanager.advance();

@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build'
+export CMAKE_PREFIX_PATH="/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src:$ROS_PACKAGE_PATH"

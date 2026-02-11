@@ -42,10 +42,10 @@ void IKSolver::makeReadyStateSeed(moveit::core::RobotState& _robot_state, std::v
 
 }
 
-void IKSolver::makeCurrentStateSeed(moveit::core::RobotState& _robot_state, std::vector<double>& _seed){
+void IKSolver::makeCurrentStateSeed(moveit::core::RobotState& _robot_state, std::vector<double> _seed){
    
 	_robot_state.copyJointGroupPositions(m_jmg, _seed);
-	m_robot_state.setJointGroupPositions(m_jmg, _seed);
+	// m_robot_state.setJointGroupPositions(m_jmg, _seed);
 
 }
 
@@ -59,20 +59,28 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::Ro
 	Eigen::Isometry3d _target_eig;
 	tf2::fromMsg(_target_pose, _target_eig);
     
-    
-	// m_robot_state.setJointGroupPositions(m_jmg, m_stateHandler.prevJointState());
 
+
+	// m_robot_state.setJointGroupPositions(m_jmg, m_stateHandler.prevJointState());
+	/*
 	std::vector<double> joint_vals;
 	_robot_state.copyJointGroupPositions(m_jmg, joint_vals);
-
+	
 	m_robot_state.setJointGroupPositions(m_jmg, joint_vals);
+	*/
+	
+	_robot_state.setJointGroupPositions(m_jmg, _seed);
+	_robot_state.update();
 
 
-
-	const auto* _model = m_robot_state.getRobotModel().get();
+	
+	const auto* _model = _robot_state.getRobotModel().get();
 	const auto& _var_names = m_jmg->getVariableNames();
 
 	int _count = m_stateHandler.currentIKCount();
+	
+
+
 	// m_stateHandler.current_count;
 	bool _found = false;
 
@@ -97,21 +105,26 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::Ro
 
 
 		// _found = m_robot_state.setFromIK(m_jmg, _target_pose, m_tip_link, m_attempts_free, m_timeout_free, m_validity_cb, _kqo_free);
-		_found = m_robot_state.setFromIK(m_jmg, _target_pose, m_tip_link, m_timeout_free, m_validity_cb, _kqo_free);
+		_found = _robot_state.setFromIK(m_jmg, _target_pose, m_tip_link, m_timeout_free, m_validity_cb, _kqo_free);
 		#ifdef ROS_BUILD
 			ROS_WARN_STREAM("[FREE IK] waypoint " << _count << (_found ? " o" : " x"));
 		#endif
+		
+		ROS_INFO_STREAM("free");
+		
 	}
 
 	// 2) CONSISTENCY (ramp down)
 	if (!_found) {
 		auto _cons = makeRampedConsistency(m_jmg, _count);
 		// _found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link, _cons, m_attempts_strict, m_timeout_strict, m_validity_cb, _kqo_cons);
-		_found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link, _cons, m_timeout_strict, m_validity_cb, _kqo_cons);
+		_found = _robot_state.setFromIK(m_jmg, _target_eig, m_tip_link, _cons, m_timeout_strict, m_validity_cb, _kqo_cons);
 		#ifdef ROS_BUILD
 			double _avg = _cons.empty() ? 0.0 : std::accumulate(_cons.begin(), _cons.end(), 0.0)/_cons.size();
 			ROS_WARN_STREAM("[CONSISTENCY IK] waypoint " << _count << " lim(avg)≈" << _avg << (_found ? " o" : " x"));
 		#endif
+		
+		ROS_INFO_STREAM("consis");
 	}
 
 	// 3) RELAXED (approx allow + Relaxed consistency + longer timeout)
@@ -120,10 +133,12 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::Ro
 		m_relaxed_limits[0], m_relaxed_limits[1], m_relaxed_limits[2],
 		m_relaxed_limits[3], m_relaxed_limits[4], m_relaxed_limits[5]);
 		// _found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link,  _cons_relaxed,m_attempts_retry, m_timeout_retry, m_validity_cb, _kqo_rel);
-		_found = m_robot_state.setFromIK(m_jmg, _target_eig, m_tip_link,  _cons_relaxed, m_timeout_retry, m_validity_cb, _kqo_rel);
+		_found = _robot_state.setFromIK(m_jmg, _target_eig, m_tip_link,  _cons_relaxed, m_timeout_retry, m_validity_cb, _kqo_rel);
 		#ifdef ROS_BUILD
 			ROS_WARN_STREAM("[RELAXED IK] waypoint " << count << (_found ? " o" : " x"));
 		#endif
+		
+		ROS_INFO_STREAM("relax");
 	}
 
 
@@ -131,7 +146,7 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::Ro
 	if (!_found) return false;
 
 	// Get result
-	m_stateHandler.setCandidateFromRobotState(m_jmg);
+	m_stateHandler.setCandidateFromRobotState(m_jmg);	// candiate_rb_state->joint
 
 	auto& _cand = m_stateHandler.candidateJointState();
 	
@@ -156,8 +171,19 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::Ro
 		}
 	}
 
+std::ostringstream oss;
+oss << "[IK RESULT] WP " << m_stateHandler.currentIKCount() << " : ";
+for (double q : _cand)
+    oss << q << " ";
+ROS_INFO_STREAM(oss.str());
 
-	if(_found)	return true;
+	if(_found){
+		m_stateHandler.upIKCount();
+		
+		m_stateHandler.prevJointState() = m_stateHandler.candidateJointState();
+
+		return true;
+	}
 	else		return false;
 	
 }

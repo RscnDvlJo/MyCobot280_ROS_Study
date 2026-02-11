@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control"
-  "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control.pdb"
+  "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control"
+  "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib/cobotrail/scan_control.pdb"
   "CMakeFiles/scan_control.dir/src/scan_control.cpp.o"
 )
 

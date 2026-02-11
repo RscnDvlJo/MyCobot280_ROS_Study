@@ -67,14 +67,14 @@ set(cobotrail_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(cobotrail_SOURCE_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail)
-  set(cobotrail_DEVEL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel)
+  set(cobotrail_SOURCE_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail)
+  set(cobotrail_DEVEL_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel)
   set(cobotrail_INSTALL_PREFIX "")
   set(cobotrail_PREFIX ${cobotrail_DEVEL_PREFIX})
 else()
   set(cobotrail_SOURCE_PREFIX "")
   set(cobotrail_DEVEL_PREFIX "")
-  set(cobotrail_INSTALL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/install)
+  set(cobotrail_INSTALL_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/install)
   set(cobotrail_PREFIX ${cobotrail_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(cobotrail_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include " STREQUAL " ")
+if(NOT "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include " STREQUAL " ")
   set(cobotrail_INCLUDE_DIRS "")
-  set(_include_dirs "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include")
+  set(_include_dirs "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/s
         message(FATAL_ERROR "Project 'cobotrail' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'cobotrail' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'cobotrail' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail/${idir}'.  ${_report}")
     endif()
     _list_append_unique(cobotrail_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib;/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

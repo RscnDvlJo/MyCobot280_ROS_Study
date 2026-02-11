@@ -64,8 +64,8 @@ void MotionExecutor::executeMotion(){
 
 	const auto& _path = m_tjmanager.jointPath();
 	const auto& _waypoint_path = m_tjmanager.waypointPath();
-	
-	
+
+
 	if (_path.size() < 2) return;
 
 	// moveit::core::RobotState current_state(*m_mgi.getCurrentState());
@@ -87,6 +87,8 @@ void MotionExecutor::executeMotion(){
 		Eigen::Affine3d target_pose;
 		tf2::fromMsg(_waypoint_path[i], target_pose);
 
+
+		
 		m_tjpublish.publish(_plan.trajectory_, target_pose);
 
 		m_tjpublish.waitForNext("Segment " + std::to_string(i) + " → " + std::to_string(i + 1));

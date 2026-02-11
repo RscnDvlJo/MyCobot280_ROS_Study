@@ -71,6 +71,10 @@ int& StateHandler::currentIKCount(){
 	return m_rbState.currentIKCount;
 }
 
+void StateHandler::upIKCount(){
+	m_rbState.currentIKCount++;
+}
+
 void StateHandler::setCurrentJointState(const std::vector<double>& _q) {
 	std::lock_guard<std::mutex> lock(m_mtx);
 	m_joints.joint_state_cur = _q;

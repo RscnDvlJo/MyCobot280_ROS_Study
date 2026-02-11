@@ -58,7 +58,7 @@ class IKSolver{
 
 		void makeReadyStateSeed(moveit::core::RobotState&, std::vector<double>&);
 		
-		void makeCurrentStateSeed(moveit::core::RobotState&, std::vector<double>&);
+		void makeCurrentStateSeed(moveit::core::RobotState&, std::vector<double>);
 
 		bool solveIK(const geometry_msgs::Pose&, moveit::core::RobotState&, const std::vector<double>&);
 

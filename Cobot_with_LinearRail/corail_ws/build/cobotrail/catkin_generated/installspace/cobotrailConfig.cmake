@@ -67,14 +67,14 @@ set(cobotrail_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(cobotrail_SOURCE_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail)
-  set(cobotrail_DEVEL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel)
+  set(cobotrail_SOURCE_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/src/cobotrail)
+  set(cobotrail_DEVEL_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel)
   set(cobotrail_INSTALL_PREFIX "")
   set(cobotrail_PREFIX ${cobotrail_DEVEL_PREFIX})
 else()
   set(cobotrail_SOURCE_PREFIX "")
   set(cobotrail_DEVEL_PREFIX "")
-  set(cobotrail_INSTALL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/install)
+  set(cobotrail_INSTALL_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/install)
   set(cobotrail_PREFIX ${cobotrail_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/install/lib;/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

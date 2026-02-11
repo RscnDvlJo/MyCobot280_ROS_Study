@@ -1,4 +1,4 @@
-prefix=/home/jhs/Desktop/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/install
+prefix=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Cobot_with_LinearRail/corail_ws/install
 
 Name: cobotrail
 Description: Description of cobotrail

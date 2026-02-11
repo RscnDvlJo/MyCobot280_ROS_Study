@@ -96,6 +96,33 @@ PathData PathPlanner::genPathNPose(){
 		}
 	}
 
+
+ROS_INFO_STREAM("========== Generated Waypoints ==========");
+
+for (size_t k = 0; k < _path.waypoints.size(); ++k)
+{
+    const auto& p = _path.waypoints[k];
+
+    ROS_INFO_STREAM(
+        "WP[" << k << "] "
+        << "Pos("
+        << p.position.x << ", "
+        << p.position.y << ", "
+        << p.position.z << ") "
+        << "Ori("
+        << p.orientation.x << ", "
+        << p.orientation.y << ", "
+        << p.orientation.z << ", "
+        << p.orientation.w << ")"
+    );
+}
+
+ROS_INFO_STREAM("=========================================");
+
+
+
+
+
 	return _path;
 
 }

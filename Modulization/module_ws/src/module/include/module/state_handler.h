@@ -52,7 +52,7 @@ class StateHandler{
 		~StateHandler();
 
 
-		// RbState *rbState();     // 직접 접근
+		// RbState *rbState();     // 
 		moveit::core::RobotState& currentRobotState();      // StateHandler.currentRobotState() = desired robot state; not commonly used
 		moveit::core::RobotState& candidateRobotState();    // StateHandler.candidateRobotState() = desired robot state;
 
@@ -68,6 +68,7 @@ class StateHandler{
 		void setCandidateFromRobotState(const moveit::core::JointModelGroup*);
 		
 		int& currentIKCount();
+		void upIKCount();
 		
 		std::vector<double> getCurrentJointState();
       		void setCurrentJointState(const std::vector<double>& _q);

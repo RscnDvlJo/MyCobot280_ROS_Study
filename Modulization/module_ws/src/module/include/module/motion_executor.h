@@ -10,6 +10,7 @@
 
 
 #include <vector>
+#include <visualization_msgs/MarkerArray.h>
 
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit_msgs/RobotTrajectory.h>

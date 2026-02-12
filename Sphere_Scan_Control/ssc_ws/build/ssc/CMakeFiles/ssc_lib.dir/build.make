@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src
+CMAKE_SOURCE_DIR = /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build
+CMAKE_BINARY_DIR = /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build
 
 # Include any dependencies generated for this target.
 include ssc/CMakeFiles/ssc_lib.dir/depend.make
@@ -58,30 +58,30 @@ include ssc/CMakeFiles/ssc_lib.dir/progress.make
 include ssc/CMakeFiles/ssc_lib.dir/flags.make
 
 ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o: ssc/CMakeFiles/ssc_lib.dir/flags.make
-ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o -c /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp
+ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o: /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o"
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o -c /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp
 
 ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ssc_lib.dir/src/robot_description.cpp.i"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp > CMakeFiles/ssc_lib.dir/src/robot_description.cpp.i
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp > CMakeFiles/ssc_lib.dir/src/robot_description.cpp.i
 
 ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ssc_lib.dir/src/robot_description.cpp.s"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp -o CMakeFiles/ssc_lib.dir/src/robot_description.cpp.s
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp -o CMakeFiles/ssc_lib.dir/src/robot_description.cpp.s
 
 ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o: ssc/CMakeFiles/ssc_lib.dir/flags.make
-ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o: /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o -c /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp
+ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o: /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o"
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o -c /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp
 
 ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.i"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp > CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.i
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp > CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.i
 
 ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.s"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp -o CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.s
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp -o CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.s
 
 # Object files for target ssc_lib
 ssc_lib_OBJECTS = \
@@ -91,23 +91,23 @@ ssc_lib_OBJECTS = \
 # External object files for target ssc_lib
 ssc_lib_EXTERNAL_OBJECTS =
 
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so: ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so: ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so: ssc/CMakeFiles/ssc_lib.dir/build.make
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so: ssc/CMakeFiles/ssc_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so"
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ssc_lib.dir/link.txt --verbose=$(VERBOSE)
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so: ssc/CMakeFiles/ssc_lib.dir/src/robot_description.cpp.o
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so: ssc/CMakeFiles/ssc_lib.dir/src/sphere_path_planning.cpp.o
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so: ssc/CMakeFiles/ssc_lib.dir/build.make
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so: ssc/CMakeFiles/ssc_lib.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so"
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ssc_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-ssc/CMakeFiles/ssc_lib.dir/build: /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so
+ssc/CMakeFiles/ssc_lib.dir/build: /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib/libssc_lib.so
 
 .PHONY : ssc/CMakeFiles/ssc_lib.dir/build
 
 ssc/CMakeFiles/ssc_lib.dir/clean:
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && $(CMAKE_COMMAND) -P CMakeFiles/ssc_lib.dir/cmake_clean.cmake
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc && $(CMAKE_COMMAND) -P CMakeFiles/ssc_lib.dir/cmake_clean.cmake
 .PHONY : ssc/CMakeFiles/ssc_lib.dir/clean
 
 ssc/CMakeFiles/ssc_lib.dir/depend:
-	cd /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc/CMakeFiles/ssc_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc/CMakeFiles/ssc_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ssc/CMakeFiles/ssc_lib.dir/depend
 

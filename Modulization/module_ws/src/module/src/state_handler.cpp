@@ -62,6 +62,20 @@ void StateHandler::snapshotCurrentJoints(){
     	m_joints.joint_state_prev = m_joints.joint_state_cur;
 }
 
+void StateHandler::snapshotCandidateJoints(){
+       m_joints.joint_state_prev = m_joints.joint_state_candidate;
+}
+
+void StateHandler::initializeSolution(){
+       m_joints.joint_state_prev.assign(6, 0.0);
+       m_joints.joint_state_cur.assign(6, 0.0);
+       m_joints.joint_state_candidate.assign(6, 0.0);
+}
+
+void StateHandler::resetPrevSolution(){
+       m_joints.joint_state_prev.assign(6, 0.0);
+}
+
 
 void StateHandler::setCandidateFromRobotState(const moveit::core::JointModelGroup* _jmg){
 	m_rbState.robot_state_candidate.copyJointGroupPositions(_jmg, m_joints.joint_state_candidate);

@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp" "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc/CMakeFiles/scan_control.dir/src/robot_description.cpp.o"
-  "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/scan_control.cpp" "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc/CMakeFiles/scan_control.dir/src/scan_control.cpp.o"
-  "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp" "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o"
+  "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp" "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc/CMakeFiles/scan_control.dir/src/robot_description.cpp.o"
+  "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/scan_control.cpp" "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc/CMakeFiles/scan_control.dir/src/scan_control.cpp.o"
+  "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp" "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/build/ssc/CMakeFiles/scan_control.dir/src/sphere_path_planning.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,7 +19,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include"
+  "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"

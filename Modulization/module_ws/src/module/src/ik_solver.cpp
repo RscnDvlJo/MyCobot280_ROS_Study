@@ -145,10 +145,8 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::Ro
 	// No result
 	if (!_found) return false;
 
-	// Get result
-	m_stateHandler.setCandidateFromRobotState(m_jmg);	// candiate_rb_state->joint
-
-	auto& _cand = m_stateHandler.candidateJointState();
+	std::vector<double> _cand;
+	_robot_state.copyJointGroupPositions(m_jmg, _cand);
 	
 	const auto& _prev = _seed;
 	// const auto& _prev = m_stateHandler.prevJointState();
@@ -171,22 +169,26 @@ bool IKSolver::solveIK(const geometry_msgs::Pose& _target_pose, moveit::core::Ro
 		}
 	}
 
-std::ostringstream oss;
-oss << "[IK RESULT] WP " << m_stateHandler.currentIKCount() << " : ";
-for (double q : _cand)
-    oss << q << " ";
-ROS_INFO_STREAM(oss.str());
+	std::ostringstream oss;
+	oss << "[IK RESULT] WP " << m_stateHandler.currentIKCount() << " : ";
+	for (double q : _cand)
+	    oss << q << " ";
+	ROS_INFO_STREAM(oss.str());
 
-	if(_found){
-		m_stateHandler.upIKCount();
+		if(_found){
+			_robot_state.setJointGroupPositions(m_jmg, _cand);
+			_robot_state.enforceBounds();
+			_robot_state.update();
+
+
+			m_stateHandler.upIKCount();
+			m_stateHandler.snapshotCandidateJoints();
+			
+			return true;
+		}
+		else		return false;
 		
-		m_stateHandler.prevJointState() = m_stateHandler.candidateJointState();
-
-		return true;
 	}
-	else		return false;
-	
-}
 
 
 std::vector<double> IKSolver::makeConsistencyVec(const moveit::core::JointModelGroup* _jmg, double _base_lim, double _shoulder_lim, double _elbow_lim, double _wrist1_lim,double _wrist2_lim, double _wrist3_lim) const{

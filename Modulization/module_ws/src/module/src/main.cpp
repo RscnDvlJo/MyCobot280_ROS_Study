@@ -70,10 +70,10 @@
 	
 	traj_pub.waitForNext("initial wait");
 	
-	executor.goToReadyPose();
+	// executor.goToReadyPose();
 	
 	
-	traj_pub.waitForNext("wanna execute motion?");
+	// traj_pub.waitForNext("wanna execute motion?");
 	executor.executeMotion();   
 
 	

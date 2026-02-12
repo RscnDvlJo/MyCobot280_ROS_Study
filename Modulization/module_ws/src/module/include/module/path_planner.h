@@ -40,7 +40,8 @@ class PathPlanner{
 		// ===== 내부 helper =====
 		void calcTempRotMat(double phi, double theta);
 		void calcTempRobotRotMat();
-		Eigen::Quaterniond calcRobotQuaternion() const;
+		Eigen::Quaterniond calcRobotQuaternion(int);
+		Eigen::Quaterniond m_q_prev;
 
 
 	public:

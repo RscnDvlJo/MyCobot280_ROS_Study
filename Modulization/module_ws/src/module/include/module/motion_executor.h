@@ -32,7 +32,7 @@ class MotionExecutor{
 		StateHandler& m_stthdl;
 		StatePublisher& m_sttpub;
 		
-		void commitCurrentStateFromMoveIt(const moveit_msgs::RobotTrajectory&);
+		void commitTargetPoint(const std::vector<double>& _q);
 		
 		Eigen::Affine3d getReadyTargetPose(moveit::planning_interface::MoveGroupInterface::Plan);
 		

@@ -1,4 +1,4 @@
-prefix=/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install
+prefix=/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install
 
 Name: ssc
 Description: Description of ssc

@@ -64,6 +64,10 @@ class StateHandler{
 		void resetCandidate();
 		void commitCandidate();
 		void snapshotCurrentJoints();
+		void snapshotCandidateJoints();
+		void initializeSolution();
+		void resetPrevSolution();
+	
 	
 		void setCandidateFromRobotState(const moveit::core::JointModelGroup*);
 		

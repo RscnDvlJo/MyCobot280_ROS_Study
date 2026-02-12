@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/robot_description.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/robot_description.h
 ros/ros.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ros/ros.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ros/ros.h
 sensor_msgs/JointState.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/sensor_msgs/JointState.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/sensor_msgs/JointState.h
 moveit/move_group_interface/move_group_interface.h
 -
 moveit_msgs/DisplayTrajectory.h
@@ -18,25 +18,25 @@ moveit_msgs/DisplayTrajectory.h
 moveit_visual_tools/moveit_visual_tools.h
 -
 
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/scan_control.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/scan_control.h
 ssc/sphere_path_planning.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ssc/sphere_path_planning.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ssc/sphere_path_planning.h
 ssc/robot_description.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ssc/robot_description.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ssc/robot_description.h
 ssc/setting.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ssc/setting.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ssc/setting.h
 ros/ros.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ros/ros.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ros/ros.h
 sensor_msgs/JointState.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/sensor_msgs/JointState.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/sensor_msgs/JointState.h
 
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/setting.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/setting.h
 
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/sphere_path_planning.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/sphere_path_planning.h
 ros/ros.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ros/ros.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/ros/ros.h
 setting.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/setting.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include/ssc/setting.h
 Eigen/Dense
 -
 Eigen/Geometry
@@ -48,9 +48,13 @@ geometry_msgs/Pose.h
 moveit/robot_model_loader/robot_model_loader.h
 -
 
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/scan_control.cpp
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/robot_description.cpp
+ssc/robot_description.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/ssc/robot_description.h
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/scan_control.cpp
 ssc/scan_control.h
-/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/ssc/scan_control.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/ssc/scan_control.h
 tf2_ros/transform_listener.h
 -
 tf2_ros/buffer.h
@@ -65,6 +69,10 @@ numeric
 -
 algorithm
 -
+
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/sphere_path_planning.cpp
+ssc/sphere_path_planning.h
+/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/src/ssc/sphere_path_planning.h
 
 /opt/ros/noetic/include/actionlib/action_definition.h
 

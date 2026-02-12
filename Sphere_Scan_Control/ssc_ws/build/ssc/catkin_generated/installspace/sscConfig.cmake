@@ -67,14 +67,14 @@ set(ssc_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(ssc_SOURCE_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc)
-  set(ssc_DEVEL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel)
+  set(ssc_SOURCE_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc)
+  set(ssc_DEVEL_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel)
   set(ssc_INSTALL_PREFIX "")
   set(ssc_PREFIX ${ssc_DEVEL_PREFIX})
 else()
   set(ssc_SOURCE_PREFIX "")
   set(ssc_DEVEL_PREFIX "")
-  set(ssc_INSTALL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install)
+  set(ssc_INSTALL_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install)
   set(ssc_PREFIX ${ssc_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install/lib;/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

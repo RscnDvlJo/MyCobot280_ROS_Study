@@ -67,14 +67,14 @@ set(ssc_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(ssc_SOURCE_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc)
-  set(ssc_DEVEL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel)
+  set(ssc_SOURCE_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc)
+  set(ssc_DEVEL_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel)
   set(ssc_INSTALL_PREFIX "")
   set(ssc_PREFIX ${ssc_DEVEL_PREFIX})
 else()
   set(ssc_SOURCE_PREFIX "")
   set(ssc_DEVEL_PREFIX "")
-  set(ssc_INSTALL_PREFIX /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install)
+  set(ssc_INSTALL_PREFIX /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/install)
   set(ssc_PREFIX ${ssc_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(ssc_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include " STREQUAL " ")
+if(NOT "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include " STREQUAL " ")
   set(ssc_INCLUDE_DIRS "")
-  set(_include_dirs "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include")
+  set(_include_dirs "/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ss
         message(FATAL_ERROR "Project 'ssc' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'ssc' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'ssc' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/src/ssc/${idir}'.  ${_report}")
     endif()
     _list_append_unique(ssc_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/jhs/Desktop/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib;/home/jhs/Desktop/Git/MyCobot280_ROS_Study/Sphere_Scan_Control/ssc_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

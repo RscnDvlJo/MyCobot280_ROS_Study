@@ -53,7 +53,7 @@ void MotionExecutor::goToReadyPose(){
 	// ros::Duration(2.0).sleep();   
 
 
-	commitCurrentStateFromMoveIt(_plan.trajectory_);
+	// commitCurrentStateFromMoveIt(_plan.trajectory_);
 	
 	// m_sttpub.enable();
 
@@ -72,9 +72,14 @@ void MotionExecutor::executeMotion(){
 
 	for (size_t i = 0; i + 1 < _path.size(); ++i) {
 
-		m_mgi.setStartStateToCurrentState();
-		m_mgi.setJointValueTarget(_path[i]);
+		moveit::core::RobotState _start_state(*m_mgi.getCurrentState());                     	// stthdl.currentRobotState
+		_start_state.setJointGroupPositions(m_rbctxt.jmg_only_robot, m_stthdl.prevJointState());   // prev_solution is reset in motion generating process
 
+
+		m_mgi.setStartState(_start_state);                                    
+		m_mgi.setJointValueTarget(_path[i]);     
+		
+		
 		moveit::planning_interface::MoveGroupInterface::Plan _plan;
 		bool _success = (m_mgi.plan(_plan) ==
 		moveit::planning_interface::MoveItErrorCode::SUCCESS);
@@ -101,27 +106,15 @@ void MotionExecutor::executeMotion(){
 			return;
 		}
 
-		commitCurrentStateFromMoveIt(_plan.trajectory_);
+		commitTargetPoint(_path[i]);
 
 		// m_sttpub.enable();
 	}
 }
 
-void MotionExecutor::commitCurrentStateFromMoveIt(const moveit_msgs::RobotTrajectory& traj)
+void MotionExecutor::commitTargetPoint(const std::vector<double>& _q)
 {
-	/*
-	auto rs = m_mgi.getCurrentState();
-	std::vector<double> q;
-	rs->copyJointGroupPositions(m_rbctxt.jmg_only_robot, q);
-	m_stthdl.setCurrentJointState(q);
-	*/
-	
-	const auto& jt = traj.joint_trajectory;
-	if (jt.points.empty()) return;
-
-	const auto& last = jt.points.back();
-	m_stthdl.setCurrentJointState(last.positions);
-
+	m_stthdl.currentJointState() = _q;
 }
 
 Eigen::Affine3d MotionExecutor::getReadyTargetPose(moveit::planning_interface::MoveGroupInterface::Plan _plan)

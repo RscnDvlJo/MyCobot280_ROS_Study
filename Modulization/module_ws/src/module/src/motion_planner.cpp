@@ -21,13 +21,24 @@ std::vector<std::vector<double>> MotionPlanner::genJointPath(){
 
 	std::vector<std::vector<double>> _joint_path;
 
-	std::vector<double> _seed;
-	m_ikSolver.makeReadyStateSeed(m_stthdl.candidateRobotState(), _seed);
-	m_stthdl.prevJointState() = _seed;
+	m_stthdl.initializeSolution();      // cur, prev, candidate are initialized as (0,0,0,0,0,0)
 	   
 	
 	while(1){
+	      const auto& _pose = m_tjmanager.current();
 
+	      ROS_INFO_STREAM(
+		 "[TARGET POSE] idx " << m_tjmanager.index()
+		 << " | Pos("
+		 << _pose.position.x << ", "
+		 << _pose.position.y << ", "
+		 << _pose.position.z << ") "
+		 << "Ori("
+		 << _pose.orientation.x << ", "
+		 << _pose.orientation.y << ", "
+		 << _pose.orientation.z << ", "
+		 << _pose.orientation.w << ")"
+	      );
 
 		if(!m_ikSolver.solveIK(m_tjmanager.current(), m_stthdl.candidateRobotState(), m_stthdl.prevJointState())){
 			/* if solveIK successed, current_robot_state in StateHandler will be updated 
@@ -45,7 +56,7 @@ std::vector<std::vector<double>> MotionPlanner::genJointPath(){
 		m_stthdl.setCandidateFromRobotState(m_rbctxt.jmg_only_robot);   // joint_state_candidate is parsed from robot_state_candidate
 		// m_stthdl.commitCandidate();                              // joint_state_current is parsed from joint_state_candidate
 		// m_stthdl.snapshotCurrentJoints();                        // joint_state_pre is parsed from joint_state_cur
-      		m_stthdl.prevJointState() = m_stthdl.candidateJointState();
+		m_stthdl.snapshotCandidateJoints(); 
       		
       		
 		_joint_path.push_back(m_stthdl.candidateJointState());
@@ -58,16 +69,17 @@ std::vector<std::vector<double>> MotionPlanner::genJointPath(){
 	
 	ROS_INFO("Generated joint path size: %zu", _joint_path.size());
 
-for (size_t i = 0; i < _joint_path.size(); ++i) {
-    std::ostringstream oss;
-    oss << "Waypoint " << i << " joints: ";
-    for (double q : _joint_path[i]) {
-        oss << q << " ";
-    }
-    ROS_INFO_STREAM(oss.str());
-}
+	for (size_t i = 0; i < _joint_path.size(); ++i) {
+	    std::ostringstream oss;
+	    oss << "Waypoint " << i << " joints: ";
+	    for (double q : _joint_path[i]) {
+		oss << q << " ";
+	    }
+	    ROS_INFO_STREAM(oss.str());
+	}
 
-
+	m_stthdl.resetPrevSolution();
+	
 	m_tjmanager.reset();
 	return _joint_path;
 

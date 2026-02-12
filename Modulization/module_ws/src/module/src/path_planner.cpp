@@ -50,7 +50,7 @@ PathData PathPlanner::genPathNPose(){
 				Eigen::Vector3d _pos =
 				m_center + (m_radius + m_dist) * _rhat;
 
-				Eigen::Quaterniond _q = calcRobotQuaternion();
+				Eigen::Quaterniond _q = calcRobotQuaternion(i+j);
 
 				geometry_msgs::Pose _pose;
 				_pose.position.x = _pos.x();
@@ -80,7 +80,7 @@ PathData PathPlanner::genPathNPose(){
 				Eigen::Vector3d _pos =
 				m_center + (m_radius + m_dist) * _rhat;
 
-				Eigen::Quaterniond _q = calcRobotQuaternion();
+				Eigen::Quaterniond _q = calcRobotQuaternion(i+j);
 
 				geometry_msgs::Pose _pose;
 				_pose.position.x = _pos.x();
@@ -176,36 +176,24 @@ void PathPlanner::calcTempRobotRotMat(){
 	m_robotRotMat = m_rotMat * m_rotMat_spin;
 }
 
-Eigen::Quaterniond PathPlanner::calcRobotQuaternion() const
+Eigen::Quaterniond PathPlanner::calcRobotQuaternion(int _i)
 {
-	Eigen::Quaterniond q(m_robotRotMat);
-	q.normalize();   // 항상 정규화 (안전)
-	return q;
-
-	/*
-	Eigen::Quaterniond q(_mat);  // Eigen이 내부적으로 동일 계산 수행
+	Eigen::Quaterniond q(m_robotRotMat);  
 	q.normalize();
 
-	// --- Hemisphere Fix: 이전 quaternion과 같은 반구 유지 ---
-	if (_i > 0) {
-		Eigen::Quaterniond q_prev(
-		m_robotQuaternion(_i-1,0),    // w
-		m_robotQuaternion(_i-1,1),    // x
-		m_robotQuaternion(_i-1,2),    // y
-		m_robotQuaternion(_i-1,3)     // z
-	);
 
-		// dot < 0 이면 서로 반대 hemisphere → 뒤집어 부호 반전
-		if (q_prev.dot(q) < 0.0) {
-			q.coeffs() *= -1.0;
+	if (_i > 0) {
+		if (m_q_prev.dot(q) < 0.0) {
+		 	q.coeffs() *= -1.0;
 		}
 	}
 
-	m_robotQuaternion(_i,0) = q.w();
-	m_robotQuaternion(_i,1) = q.x();
-	m_robotQuaternion(_i,2) = q.y();
-	m_robotQuaternion(_i,3) = q.z();
-	*/
+
+	
+
+	m_q_prev = q;
+
+	return q;
 
 }
 
